@@ -1,3 +1,8 @@
 .page{
   min-height: 100vh;
 }
+
+div{
+  background-size: cover;
+  background-repeat: no-repeat;
+}

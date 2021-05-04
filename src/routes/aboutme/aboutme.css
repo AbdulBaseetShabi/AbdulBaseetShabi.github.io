@@ -1,5 +1,18 @@
 #aboutme{
     background-color: #0F0E17;
-    background-size: cover;
     opacity: 85%;
+}
+
+#profile-picture-sub-container{
+    opacity: 60%;
+}
+
+#profile-picture-main-container{
+  position: relative;
+}
+
+#profile-picture{
+    position: absolute;
+    top: 10px;
+    left: calc(50% - calc(108/2)px)
 }
