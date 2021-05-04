@@ -14,5 +14,5 @@
 #profile-picture{
     position: absolute;
     top: 10px;
-    left: calc(50% - calc(108/2)px)
+    left: calc(50% - 90px) /* 50% minus half the div width */
 }
