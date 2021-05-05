@@ -1,9 +1,12 @@
 import './App.css';
+
+import NavigationBar from './widget/navigationbar/navigationbar';
 import AboutMe from './routes/aboutme/aboutme.js';
 
 function App() {
   return (<div>
-    <AboutMe/>    
+    <NavigationBar/>
+    <AboutMe/> 
   </div>);
 }
 
