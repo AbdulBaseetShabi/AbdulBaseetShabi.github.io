@@ -125,6 +125,7 @@ class AnimatedConsole extends React.Component {
           margin: "0 auto",
           padding: "0.5rem",
           border: "5px inset black",
+          userSelect: "none",
         }}
       >
         {text.map((data, index) => {
