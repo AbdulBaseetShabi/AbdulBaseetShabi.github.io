@@ -1,0 +1,18 @@
+.social {
+  margin: 2rem 0;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+}
+
+.social > i {
+  cursor: pointer;
+}
+
+.tooltip {
+  background-color: #272c45;
+  opacity: 80%;
+  padding: 7px;
+  visibility: hidden;
+  margin-left: 10px;
+}
