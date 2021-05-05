@@ -1,6 +1,6 @@
 #aboutme{
     background-color: #0F0E17;
-    opacity: 85%;
+    /* opacity: 85%; *//*TODO: Bug*/
 }
 
 #profile-picture-sub-container{
@@ -9,10 +9,11 @@
 
 #profile-picture-main-container{
   position: relative;
+  padding-top: 6rem;
 }
 
 #profile-picture{
     position: absolute;
-    top: 10px;
+    top: 6.6rem;
     left: calc(50% - 90px) /* 50% minus half the div width */
 }
