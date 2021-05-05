@@ -1,6 +1,6 @@
 #navigation-bar{
-    background-color: transparent;
-    /* background-color: rgba(255,255,255,0.5); */
+    /* background-color: transparent; */
+    background-color: #0f0e17;
     /* font-size: larger; */
     position: absolute;
     width: 100%;
@@ -12,6 +12,8 @@
 
 .navigation-item{
     padding: 5px;
+    margin: auto;
+    text-align: center;
 }
 .navigation-item:hover{
     border-bottom: 3px solid #fffffe;

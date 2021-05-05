@@ -23,8 +23,17 @@ class NavigationBar extends React.Component {
         <div style={{ width: "70%", display: "flex" }}>
           {ROUTES.map((route, index) => {
             return (
-              <div style={{ width: `${100 / ROUTES.length}%` }} key={index}>
-                <label className="navigation-item">{route.name.toUpperCase()}</label>
+              <div
+                style={{
+                  width: `${100 / ROUTES.length}%`,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                key={index}
+              >
+                <label className="navigation-item">
+                  {route.name.toUpperCase()}
+                </label>
               </div>
             );
           })}
