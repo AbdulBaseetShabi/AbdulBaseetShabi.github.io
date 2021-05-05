@@ -3,6 +3,11 @@ import background from "../../assets/images/aboutme.jpg";
 import profilepicture from "../../assets/images/profile.jpg";
 import CustomButton from "../../widget/button/custombutton";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
+import Socials from "./social/socials";
+
+function openResume(){
+  window.open("/resume/resume.pdf","_blank");
+}
 
 function AboutMe() {
   return (
@@ -32,13 +37,13 @@ function AboutMe() {
           }}
         ></div>
       </div>
-      <div style={{marginTop: "4rem"}}>
+      <div style={{marginTop: "3.5rem"}}>
         <AnimatedConsole
           prefixText="> "
           suffixText="|"
           texts={["Hi, my name is$Abdul-Baseet", "Welcome to my$website$"]}
           textChangeInterval={1200}
-          typingSpeed={50}
+          typingSpeed={500}
           generalStyle={{
             fontWeight: "bold",
             backgroundColor: "transparent",
@@ -52,14 +57,15 @@ function AboutMe() {
         />
       </div>
 
-      <div style={{ textAlign: "center", marginTop: "6rem" }}>
+      <div style={{ textAlign: "center", marginTop: "4rem" }}>
         <CustomButton
           backgroundColor="#272C45"
           opacity="80%"
-          text="Download Resume"
+          text="View Resume"
+          onClick={openResume}
         />
       </div>
-      <div style={{ width: "100%", position: "absolute", bottom: "0" }}>
+      <div style={{ width: "100%", position: "absolute", bottom: "-2.3px" }}>
         <svg
           width="100%"
           viewBox="0 0 1440 121"
@@ -72,6 +78,9 @@ function AboutMe() {
             fillOpacity="0.95"
           />
         </svg>
+      </div>
+      <div style={{position: "absolute", top: "calc(50% - 144px)", left: "1.3rem"}}>
+        <Socials/>
       </div>
     </div>
   );
