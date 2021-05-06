@@ -1,0 +1,58 @@
+#experiences {
+  background-color: #272c45;
+}
+
+/* Slide Show */
+#slide-show {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.direction-icon {
+  position: absolute;
+  opacity: 50%;
+}
+
+.direction-icon:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/* Button */
+.view-detail-button {
+  width: 200px;
+  height: 40px;
+  background-color: #272c45;
+  opacity: 60%;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+}
+
+.view-detail-button:hover, .view-detail-button > label{
+  opacity: 100%;
+  cursor: pointer;
+}
+
+/* Card */
+.experience-card {
+  width: 100%;
+  height: 120px;
+  background-color: #0f0e17;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+}
+
+.experience-card-title {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}

@@ -3,6 +3,7 @@ import "./App.css";
 import NavigationBar from "./widget/navigationbar/navigationbar";
 import AboutMe from "./routes/aboutme/aboutme.js";
 import Education from "./routes/education/education";
+import Experiences from "./routes/experiences/experiences";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <NavigationBar />
       <AboutMe />
       <Education/>
+      <Experiences/>
     </div>
   );
 }
