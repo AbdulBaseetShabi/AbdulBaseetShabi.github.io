@@ -51,3 +51,27 @@ div{
   from  { transform:translate(0, 0); opacity:1; }
   to  { transform:translate(0, 50px); opacity:0; }
 }
+
+
+/* Projects */
+.slide-right {
+  animation-name: slide-right;
+}
+
+.slide-left {
+  animation-name: slide-left;
+}
+
+.slide-left, .slide-right {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-right{
+  from   { transform:translate(0, 0);}
+  to { transform:translate(-40%, 0);}
+}
+
+@keyframes slide-left{
+  from   { transform:translate(0, 0);opacity: 0;}
+  to { transform:translate(30%, 0);opacity: 1;}
+}
