@@ -6,7 +6,7 @@ import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
 import Socials from "./social/socials";
 
 function openResume(){
-  window.open("/resume/resume.pdf","_blank");
+  window.open("/assets/resume/resume.pdf","_blank");
 }
 
 function AboutMe() {
@@ -80,7 +80,7 @@ function AboutMe() {
         </svg>
       </div>
       <div style={{position: "absolute", top: "calc(50% - 144px)", left: "1.3rem"}}>
-        <Socials/>
+        <Socials orientation="horizontal"/>
       </div>
     </div>
   );
