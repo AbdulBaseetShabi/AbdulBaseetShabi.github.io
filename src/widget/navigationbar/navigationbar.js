@@ -2,10 +2,10 @@ import React from "react";
 import "./navigationbar.css";
 
 const ROUTES = [
-  { name: "about me", route: "/aboutme" },
-  { name: "education", route: "/education" },
-  { name: "experiences", route: "/experiences" },
-  { name: "projects", route: "/projects" },
+  { name: "about me", route: "#aboutme" },
+  { name: "education", route: "#education" },
+  { name: "experiences", route: "#experiences" },
+  { name: "projects", route: "#projects" },
 ];
 
 class NavigationBar extends React.Component {
@@ -31,9 +31,9 @@ class NavigationBar extends React.Component {
                 }}
                 key={index}
               >
-                <label className="navigation-item">
-                  {route.name.toUpperCase()}
-                </label>
+                <a href={route.route} className="navigation-item">
+                  <label>{route.name.toUpperCase()}</label>
+                </a>
               </div>
             );
           })}
