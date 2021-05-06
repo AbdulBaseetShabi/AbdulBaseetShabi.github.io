@@ -52,8 +52,22 @@ class Socials extends React.Component {
     }
   }
   render() {
+    let style_container =
+      this.props.orientation === "horizontal"
+        ? { backgroundColor: "transparent" }
+        : {
+            backgroundColor: "transparent",
+            display: "flex",
+            alignItems: "center",
+            margin: "0 auto",
+            justifyContent: "center",
+          };
+    let style_tooltip =
+      this.props.orientation === "horizontal"
+        ? { marginLeft: "10px" }
+        : { position: "relative", bottom: "-48px", left: "-58px" };
     return (
-      <div style={{ backgroundColor: "transparent" }}>
+      <div style={style_container}>
         {SOCIALS.map((social, index) => {
           return (
             <div className="social" key={index}>
@@ -65,7 +79,9 @@ class Socials extends React.Component {
                 }}
                 className={`${social.icon} fa-3x icon`}
               ></i>
-              <label className="tooltip">{social.name}</label>
+              <label className="tooltip" style={style_tooltip}>
+                {social.name}
+              </label>
             </div>
           );
         })}
