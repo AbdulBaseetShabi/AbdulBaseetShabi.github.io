@@ -1,9 +1,53 @@
 .page{
   min-height: 100vh;
   min-width: 100%;
+  padding-top: 60px;
 }
 
 div{
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Animations */
+.enter-left{
+  animation-name: fade-in-left;
+}
+
+.enter-right{
+  animation-name: fade-in-right; 
+}
+
+.enter-bottom{
+  animation-name: fade-in-bottom;
+}
+
+.leave-bottom{
+  animation-name: fade-out-bottom;
+  animation-duration: 1.5s;
+}
+
+.enter-right, .enter-left, .enter-bottom{
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-left {
+  from   { transform:translate(-50px, 0); opacity:0; }
+  to { transform:translate(0, 0); opacity:1; }
+}
+
+@keyframes fade-in-right {
+  from   { transform:translate(50px, 0); opacity:0; }
+  to { transform:translate(0, 0); opacity:1; }
+}
+
+@keyframes fade-in-bottom {
+  from   { transform:translate(0, 50px); opacity:0; }
+  to { transform:translate(0, 0); opacity:1; }
+}
+
+@keyframes fade-out-bottom {
+  from  { transform:translate(0, 0); opacity:1; }
+  to  { transform:translate(0, 50px); opacity:0; }
 }

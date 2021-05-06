@@ -19,7 +19,10 @@
 .navigation-item:hover{
     border-bottom: 3px solid #fffffe;
     cursor: pointer;
-    /* display: block; */
+}
+
+.navigation-item > label{
+    cursor: pointer;
 }
 
 a{

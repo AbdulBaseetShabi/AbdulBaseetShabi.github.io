@@ -65,7 +65,7 @@ function AboutMe() {
           onClick={openResume}
         />
       </div>
-      <div style={{ width: "100%", position: "absolute", bottom: "-2.3px" }}>
+      <div style={{ width: "100%", position: "absolute", bottom: "-120px" }}>
         <svg
           width="100%"
           viewBox="0 0 1440 121"
