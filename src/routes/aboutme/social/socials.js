@@ -4,22 +4,22 @@ import "./socials.css";
 const SOCIALS = [
   {
     name: "Facebook",
-    url: "http://www.facebook.com",
+    url: "https://www.facebook.com/Bsquare480/",
     icon: "fab fa-facebook",
   },
   {
     name: "Instagram",
-    url: "http://www.instagram.com",
+    url: "https://www.instagram.com/bsquare480/",
     icon: "fab fa-instagram",
   },
   {
     name: "LinkedIn",
-    url: "http://www.facebook.com",
+    url: "https://www.linkedin.com/in/abdulbaseet/",
     icon: "fab fa-linkedin",
   },
   {
     name: "GitHub",
-    url: "http://github.com",
+    url: "https://github.com/AbdulBaseetShabi",
     icon: "fab fa-github",
   },
 ];
