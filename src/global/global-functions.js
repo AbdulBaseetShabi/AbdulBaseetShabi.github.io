@@ -13,7 +13,20 @@ function isElementInViewport(element) {
   );
 }
 
+function closeProjects(exception) {
+  const projects = document.getElementsByClassName("project");
+  for (let i = 0; i < projects.length; i++) {
+    const project = projects.item(i);
+    const image_and_details = project.children;
+    if (exception !== project.getAttribute("position")) {
+      image_and_details.item(1).style.display = "none";
+      image_and_details.item(1).classList.remove("show-bottom");
+    }
+  }
+}
+
 module.exports = {
   openLinkInNewTab,
-  isElementInViewport
+  isElementInViewport,
+  closeProjects
 };

@@ -234,10 +234,46 @@ const VOLUNTEER = [
     type: "volunteer",
   }
 ];
+
+// Projects
+const PROJECTS = [
+  {
+    name: "Web Resume",
+    languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
+    tools_and_technologies: ["Visual Studio", "Git"],
+    production_link: "http://developer.mozilla.org",
+    source_code_link: "http://googlecode.com",
+    description:
+      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
+    image: "/assets/images/test.jpg",
+  },
+  {
+    name: "Web Resume",
+    languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
+    tools_and_technologies: ["Visual Studio", "Git"],
+    production_link: "http://developer.mozilla.org",
+    source_code_link: "http://googlecode.com",
+    description:
+      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
+    image: "/assets/images/aboutme.jpg",
+  },
+  {
+    name: "Web Resume",
+    languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
+    tools_and_technologies: ["Visual Studio", "Git"],
+    production_link: "",
+    source_code_link: "http://googlecode.com",
+    description:
+      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
+    image: "/assets/images/aboutme.jpg",
+  },
+];
+
 module.exports = {
   EDUCATION,
   ACTIVITIES,
   COOPS,
   WORK,
-  VOLUNTEER
+  VOLUNTEER,
+  PROJECTS
 }
