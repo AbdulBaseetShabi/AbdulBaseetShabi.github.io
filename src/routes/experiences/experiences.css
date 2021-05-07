@@ -2,12 +2,27 @@
   background-color: #272c45;
 }
 
+.experience-title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 auto;
+
+  padding: 10px 0;
+  position: absolute;
+  top: -6rem;
+}
 /* Slide Show */
 #slide-show {
   position: relative;
   display: flex;
   align-items: center;
   height: 100vh;
+}
+
+#slide {
+  width: 85%;
+  margin: 0 auto;
+  height: 80%;
 }
 
 .direction-icon {
@@ -34,7 +49,8 @@
   user-select: none;
 }
 
-.view-detail-button:hover, .view-detail-button > label{
+.view-detail-button:hover,
+.view-detail-button > label {
   opacity: 100%;
   cursor: pointer;
 }
@@ -43,7 +59,6 @@
 .experience-card {
   width: 100%;
   height: 120px;
-  background-color: #0f0e17;
   margin: 2rem auto;
   display: flex;
   align-items: center;
@@ -55,4 +70,28 @@
   text-align: center;
   font-size: 1.2rem;
   font-weight: bolder;
+}
+
+/* Details Modal */
+.detail-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: calc(100vh + 60px);
+  width: 100%;
+  position: absolute;
+  top: -60px;
+}
+
+#main-modal {
+  height: 70%;
+  position: absolute;
+  z-index: 9;
+  left: 15%;
+  top: 15%;
+  width: 70%;
+}
+
+#summary-header{
+  width: 50%;
+  margin: 5px auto;
+  padding: 3px 0;
 }

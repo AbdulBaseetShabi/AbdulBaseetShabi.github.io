@@ -1,3 +1,4 @@
+// Education
 const EDUCATION = [
   {
     school: "Wilfrid Laurier University",
@@ -46,7 +47,197 @@ const ACTIVITIES = [
   { name: "WebMaster - Laurier Data Science Society", reflection: [] },
 ];
 
+// Experiences
+const COOPS = [
+  {
+    company: "Rodan Energy Solutions",
+    date_from: "Sept. 2020",
+    date_to: "Dec. 2020",
+    title: "IT Analyst, Process Improvement & Automation",
+    location: "Virtual",
+    tools_and_technologies: ["Git", "Azure Devops", "Visual Studio", "Excel"],
+    languages_and_frameworks: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "NodeJS",
+      "VBA",
+      "Python",
+    ],
+    summary: [],
+    type: "coop",
+  },
+  {
+    company: "The Incubator - The Co-operators Group Limited",
+    date_from: "May 2019",
+    date_to: "Aug. 2019",
+    title: "Software Developer",
+    location: "Waterloo, ON, Canada",
+    tools_and_technologies: ["Git", "Atlassian", "Visual Studio", "MongoDB"],
+    languages_and_frameworks: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Angular",
+      "NodeJS",
+    ],
+    summary: [],
+    type: "coop",
+  },
+  {
+    company: "ATS Automation",
+    date_from: "Jan. 2020",
+    date_to: "Dec. 2020",
+    title: "Software Developer",
+    location: "Waterloo, ON, Canada",
+    tools_and_technologies: ["SVN", "Atlassian", "Visual Studio", "SSMS"],
+    languages_and_frameworks: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AngularJS",
+      "C#",
+      "SQL",
+    ],
+    summary: [],
+    type: "coop",
+  },
+];
+
+const WORK = [
+  {
+    company: "Mathematics and Statistics Support - WLU",
+    date_from: "Jan. 2019",
+    date_to: "April 2021",
+    title: "Peer Tutor/Mentor",
+    location: "Waterloo, ON, Canada",
+    main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
+    summary: [],
+    type: "work",
+  },
+  {
+    company: "Science Department - WLU",
+    date_from: "Sept. 2019",
+    date_to: "April 2021",
+    title: "Instructional Assistant",
+    location: "Waterloo, ON, Canada",
+    main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
+    summary: [],
+    type: "work",
+  },
+  {
+    company: "Mathematics Department - WLU",
+    date_from: "Sept. 2018",
+    date_to: "Dec. 2019",
+    title: "Proctor and Marker",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Attention to Details",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+    ],
+    summary: [],
+    type: "work",
+  },
+  {
+    company: "Teaching and Learning - WLU",
+    date_from: "May 2018",
+    date_to: "Sept. 2018",
+    title: "Headstart Ambassador",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership"
+    ],
+    summary: [],
+    type: "work",
+  },
+];
+
+const VOLUNTEER = [
+  {
+    company: "Student Union - WLU",
+    date_from: "May 2019",
+    date_to: "April 2020",
+    title: "Icebreaker",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership"
+    ],
+    summary: [
+    ],
+    type: "volunteer",
+  },
+  {
+    company: "Laurier International - WLU",
+    date_from: "June 2018",
+    date_to: "April 2019",
+    title: "Global Engagement Student Ambassador",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership"
+    ],
+    summary: [
+    ],
+    type: "volunteer",
+  },
+  {
+    company: "Laurier Computing Society - WLU",
+    date_from: "May 2020",
+    date_to: "April 2021",
+    title: "President",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership"
+    ],
+    summary: [
+    ],
+    type: "volunteer",
+  }
+  ,
+  {
+    company: "Laurier Data Science Society - WLU",
+    date_from: "Sept. 2020",
+    date_to: "April 2021",
+    title: "Web Master",
+    location: "Waterloo, ON, Canada",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership"
+    ],
+    summary: [
+    ],
+    type: "volunteer",
+  }
+];
 module.exports = {
   EDUCATION,
-  ACTIVITIES
+  ACTIVITIES,
+  COOPS,
+  WORK,
+  VOLUNTEER
 }

@@ -11,8 +11,11 @@ div {
 }
 
 .inline-block-label {
-  width: 100%;
   text-align: center;
+}
+
+.inline-block-label-uncentered, .inline-block-label{
+  width: 100%;
   display: inline-block;
 }
 
