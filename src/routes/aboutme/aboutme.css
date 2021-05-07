@@ -9,11 +9,10 @@
 
 #profile-picture-main-container{
   position: relative;
-  padding-top: 3rem;
 }
 
 #profile-picture{
     position: absolute;
-    top: 3.6rem;
+    top: 0.6rem;
     left: calc(50% - 90px) /* 50% minus half the div width */
 }

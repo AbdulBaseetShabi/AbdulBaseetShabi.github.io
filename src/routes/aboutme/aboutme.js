@@ -39,11 +39,12 @@ function AboutMe() {
       </div>
       <div style={{marginTop: "3.5rem"}}>
         <AnimatedConsole
+          width = "30%"
           prefixText="> "
           suffixText="|"
-          texts={["Hi, my name is$Abdul-Baseet", "Welcome to my$website$"]}
+          texts={["Hi, My name is$Abdul-Baseet", "If that is too$long$to remember, feel free to call me$Abdul$" ,"Welcome to $My Website$","Every aspect of it is $custom made$with a little help from StackOverflow"]}
           textChangeInterval={1200}
-          typingSpeed={500}
+          typingSpeed={100}
           generalStyle={{
             fontWeight: "bold",
             backgroundColor: "transparent",
@@ -53,11 +54,11 @@ function AboutMe() {
             paddingTop: "0.5rem",
             opacity: "95%"
           }}
-          specialCharaterStyle={{ color: "#BB6BD9" }}
+          specialCharaterStyle={{ color: "#BB6BD9", fontWeight: "Bold"}}
         />
       </div>
 
-      <div style={{ textAlign: "center", marginTop: "4rem" }}>
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
         <CustomButton
           backgroundColor="#272C45"
           opacity="80%"
@@ -65,7 +66,7 @@ function AboutMe() {
           onClick={openResume}
         />
       </div>
-      <div style={{ width: "100%", position: "absolute", bottom: "-120px" }}>
+      <div style={{ width: "100%", position: "absolute", bottom: "-150px" }}>
         <svg
           width="100%"
           viewBox="0 0 1440 121"
