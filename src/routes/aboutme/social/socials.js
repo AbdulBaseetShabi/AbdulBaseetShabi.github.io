@@ -54,9 +54,8 @@ class Socials extends React.Component {
   render() {
     let style_container =
       this.props.orientation === "horizontal"
-        ? { backgroundColor: "transparent" }
+        ? {}
         : {
-            backgroundColor: "transparent",
             display: "flex",
             alignItems: "center",
             margin: "0 auto",

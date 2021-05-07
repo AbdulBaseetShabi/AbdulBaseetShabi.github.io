@@ -1,18 +1,41 @@
-#aboutme{
-    background-color: #0F0E17;
-    /* opacity: 85%; *//*TODO: Bug*/
+#aboutme {
+  background-color: #0f0e17;
 }
 
-#profile-picture-sub-container{
-    opacity: 60%;
+#profile-picture-sub-container {
+  opacity: 60%;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin: auto;
 }
 
-#profile-picture-main-container{
+#profile-picture-main-container {
   position: relative;
 }
 
-#profile-picture{
-    position: absolute;
-    top: 0.6rem;
-    left: calc(50% - 90px) /* 50% minus half the div width */
+#profile-picture {
+  position: absolute;
+  top: 0.6rem;
+  left: calc(50% - 90px); /* 50% minus half the div width */
+  height: 180px;
+  width: 180px;
+  border-radius: 100px;
+}
+
+#socials-container {
+  position: absolute;
+  top: calc(50% - 144px);
+  left: 1.3rem;
+}
+
+#svg-container {
+  width: 100%;
+  position: absolute;
+  bottom: -150px;
+}
+
+#custom-button-container {
+  text-align: center;
+  margin-top: 2rem;
 }
