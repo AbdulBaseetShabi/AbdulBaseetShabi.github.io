@@ -119,8 +119,8 @@ class AnimatedConsole extends React.Component {
     return (
       <div
         style={{
-          width: "25%",
-          height: "7rem",
+          width: this.props.width,
+          minHeight: "8rem",
           backgroundColor: "#272C45",
           margin: "0 auto",
           padding: "0.5rem",
