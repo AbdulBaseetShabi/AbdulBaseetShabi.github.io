@@ -39,7 +39,12 @@ class NavigationBar extends React.Component {
           })}
         </div>
         <div style={{ width: "15%" }}>
-          <i className="fas fa-adjust fa-2x"></i>
+          <i
+            className="fas fa-adjust fa-2x"
+            onClick={() => {
+              this.props.changeTheme();
+            }}
+          ></i>
         </div>
       </div>
     );
