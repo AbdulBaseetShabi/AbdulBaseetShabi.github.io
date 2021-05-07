@@ -154,7 +154,7 @@ class Education extends React.Component {
       if (all_animation_done) {
         clearInterval(this.animationCheck);
       }
-    }, 300);
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -265,7 +265,10 @@ class Education extends React.Component {
               <div>
                 {this.state.reflection.map((text, index) => {
                   return (
-                    <p key={index} style={{ fontSize: "1rem", padding: "0 10px" }}>
+                    <p
+                      key={index}
+                      style={{ fontSize: "1rem", padding: "0 10px" }}
+                    >
                       {text}
                     </p>
                   );

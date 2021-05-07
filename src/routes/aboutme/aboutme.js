@@ -42,7 +42,7 @@ function AboutMe() {
           width = "30%"
           prefixText="> "
           suffixText="|"
-          texts={["Hi, My name is$Abdul-Baseet", "If that is too$long$to remember, feel free to call me$Abdul$" ,"Welcome to $My Website$","Every aspect of it is $custom made$with a little help from StackOverflow"]}
+          texts={["Welcome to $My Website$","$NOTE:$it is still under development","My name is$Abdul-Baseet", "If that is too$long$to remember, feel free to call me$Abdul$" ,"The website is $custom made$with a little help from StackOverflow","If you notice any$error,$let me know","You can reach me on any$platforms$to the$left of your screen"]}
           textChangeInterval={1200}
           typingSpeed={100}
           generalStyle={{

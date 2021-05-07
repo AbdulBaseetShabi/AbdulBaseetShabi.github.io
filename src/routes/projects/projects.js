@@ -104,7 +104,7 @@ class ProjectCard extends React.Component {
 
             <p style={{ padding: "0 0.5rem" }}>{this.details.description}</p>
             <div
-              style={{ height: "auto", position: "absolute", bottom: "3px" }}
+              style={{ height: "auto", position: "absolute", bottom: "3px", width: "100%" }}
             >
               <label
                 style={{
@@ -130,7 +130,7 @@ class ProjectCard extends React.Component {
                 </span>
                 {this.details.tools_and_technologies.join(", ")}
               </label>
-              <div style={{ display: "flex", alignItems: "center", margin: "0 auto"}}>
+              <div style={{ display: "flex", alignItems: "center", margin: "0 auto", width: "100%" }}>
                 <CustomButton
                   link={this.details.source_code_link}
                   text="Source Code"
