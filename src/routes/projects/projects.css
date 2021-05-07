@@ -5,4 +5,10 @@
 
 .project-detail{
   opacity: 0;
+  width: 1%;
+  display: none;
+}
+
+.project-image:hover{
+  cursor: pointer;
 }

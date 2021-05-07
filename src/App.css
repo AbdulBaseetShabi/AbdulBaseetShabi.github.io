@@ -1,77 +1,97 @@
-.page{
+.page {
   min-height: 100vh;
   min-width: 100%;
   padding-top: 60px;
 }
 
-div{
+div {
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 /* Animations */
-.enter-left{
+.enter-left {
   animation-name: fade-in-left;
 }
 
-.enter-right{
-  animation-name: fade-in-right; 
+.enter-right {
+  animation-name: fade-in-right;
 }
 
-.enter-bottom{
+.enter-bottom {
   animation-name: fade-in-bottom;
 }
 
-.leave-bottom{
+.leave-bottom {
   animation-name: fade-out-bottom;
   animation-duration: 1.5s;
 }
 
-.enter-right, .enter-left, .enter-bottom{
+.enter-right,
+.enter-left,
+.enter-bottom {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes fade-in-left {
-  from   { transform:translate(-50px, 0); opacity:0; }
-  to { transform:translate(0, 0); opacity:1; }
+  from {
+    transform: translate(-50px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-right {
-  from   { transform:translate(50px, 0); opacity:0; }
-  to { transform:translate(0, 0); opacity:1; }
+  from {
+    transform: translate(50px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-bottom {
-  from   { transform:translate(0, 50px); opacity:0; }
-  to { transform:translate(0, 0); opacity:1; }
+  from {
+    transform: translate(0, 50px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-out-bottom {
-  from  { transform:translate(0, 0); opacity:1; }
-  to  { transform:translate(0, 50px); opacity:0; }
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(0, 50px);
+    opacity: 0;
+  }
 }
-
 
 /* Projects */
-.slide-right {
-  animation-name: slide-right;
-}
-
-.slide-left {
-  animation-name: slide-left;
-}
-
-.slide-left, .slide-right {
+.show-bottom {
+  animation-name: show-bottom;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes slide-right{
-  from   { transform:translate(0, 0);}
-  to { transform:translate(-40%, 0);}
-}
+@keyframes show-bottom {
+  from {
+    opacity: 0;
+    width: 1%;
+  }
 
-@keyframes slide-left{
-  from   { transform:translate(0, 0);opacity: 0;}
-  to { transform:translate(30%, 0);opacity: 1;}
+  to {
+    opacity: 1;
+    width: 60%;
+  }
 }
