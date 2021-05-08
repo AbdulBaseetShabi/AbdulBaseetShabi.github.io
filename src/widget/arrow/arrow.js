@@ -15,6 +15,7 @@ function Arrow(props) {
       id="arrow-widget"
       style={{
         transform: `rotate(${rotation})`,
+        backgroundColor: props.backgroundColor,
       }}
     >
       <i

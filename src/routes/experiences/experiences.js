@@ -98,7 +98,9 @@ class Experiences extends React.Component {
               this.changePage(-1);
             }}
           >
-            <Arrow />
+            <Arrow
+              backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+            />
           </div>
           <div
             className="direction-icon"
@@ -110,7 +112,10 @@ class Experiences extends React.Component {
               this.changePage(1);
             }}
           >
-            <Arrow direction="right" />
+            <Arrow
+              direction="right"
+              backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+            />
           </div>
           <div id="slide" className={animate_slideshow}>
             {current_page === 0 ? (
