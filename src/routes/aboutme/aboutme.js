@@ -39,7 +39,7 @@ function AboutMe(props) {
           texts={[
             "Welcome to $My Website$",
             "$NOTE:$it is still under development",
-            "My name is$Abdul-Baseet",
+            "My name is$Abdul-Baseet Shabi",
             "$Too long?$Feel free to call me$Abdul$",
             "This website is $custom made$with a little help from StackOverflow",
             "Notice an $ERROR?$Please let me know",

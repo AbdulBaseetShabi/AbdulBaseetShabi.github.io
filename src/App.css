@@ -45,7 +45,7 @@ hr {
   animation-name: roll-in;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  animation-delay: 21500ms;
+  animation-delay: 20500ms;
   opacity: 0;
 }
 
