@@ -1,6 +1,6 @@
 import background from "../../assets/images/thankyou.jpg";
 import background2 from "../../assets/images/thankyou2.jpg";
-import Socials from "../aboutme/social/socials";
+import Socials from "../../widget/socials/socials";
 
 function ThankYou(props) {
   return (

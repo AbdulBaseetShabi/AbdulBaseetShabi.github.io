@@ -3,7 +3,7 @@ import background from "../../assets/images/aboutme.jpg";
 import profilepicture from "../../assets/images/profile.jpg";
 import CustomButton from "../../widget/button/custombutton";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
-import Socials from "./social/socials";
+import Socials from "../../widget/socials/socials";
 import GlobalFunctions from "../../global/global-functions";
 
 function AboutMe(props) {
@@ -27,7 +27,8 @@ function AboutMe(props) {
           }}
         ></div>
       </div>
-      <div style={{ marginTop: "3.5rem" }}>
+      <div style={{ margin: "3.5rem auto" }} 
+          className="show-bottom-console">
         <AnimatedConsole
           width="30%"
           prefixText="$ "
@@ -65,20 +66,6 @@ function AboutMe(props) {
           }}
         />
       </div>
-      {/* <div id="svg-container">
-        <svg
-          width="100%"
-          viewBox="0 0 1440 121"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 0L80 17.6301C160 35.4492 320 70.4258 480 68.0625C640 65.6992 800 25.0508 960 17.6301C1120 9.92578 1280 35.4492 1360 47.8801L1440 60.5V121H1360C1280 121 1120 121 960 121C800 121 640 121 480 121C320 121 160 121 80 121H0V0Z"
-            fill= {props.isDarkMode ? "#242629" : "green"}
-            fillOpacity="0.98"
-          />
-        </svg>
-      </div> */}
       <div id="socials-container">
         <Socials orientation="horizontal" />
       </div>
