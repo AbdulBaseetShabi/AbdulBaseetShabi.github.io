@@ -68,7 +68,7 @@ function AboutMe(props) {
         />
       </div>
       <div id="socials-container">
-        <Socials orientation="horizontal" />
+        <Socials orientation="horizontal" animate={true}/>
       </div>
     </div>
   );

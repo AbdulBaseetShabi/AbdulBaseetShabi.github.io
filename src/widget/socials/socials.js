@@ -77,7 +77,7 @@ class Socials extends React.Component {
                 onClick={() => {
                   this.openLink(social.url);
                 }}
-                className={`${social.icon} fa-3x icon roll-in`}
+                className={`${social.icon} fa-3x icon ${this.props.animate ? "roll-in" : ""}`}
               ></i>
               <label className="tooltip" style={style_tooltip}>
                 {social.name}
