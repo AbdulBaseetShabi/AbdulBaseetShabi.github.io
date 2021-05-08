@@ -1,14 +1,15 @@
-import background from "../../assets/images/thankyou.jpg";
-import background2 from "../../assets/images/thankyou2.jpg";
 import Socials from "../../widget/socials/socials";
+import GlobalVariables from "../../global/global-variables";
 
 function ThankYou(props) {
+  let dark_mode_background = "1b9CZyHaI9lNftskYSyu1F8YVurqvWCtW";
+  let light_mode_background = "1Z5lfS0ytG35roa-dgtG-y4VaJQ48XVYD";
   return (
     <div
       id="thankyou"
       className="page"
       style={{
-        backgroundImage: `url(${props.isDarkMode ? background : background2})`,
+        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${props.isDarkMode ? dark_mode_background : light_mode_background})`,
         backgroundSize: "cover",
         paddingTop: "0",
         display: "flex",

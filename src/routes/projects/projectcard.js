@@ -1,6 +1,7 @@
 import React from "react";
 
 import GlobalFuntions from "../../global/global-functions.js";
+import GlobalVariables from "../../global/global-variables.js";
 import CustomButton from "./custombutton.js";
 
 class ProjectCard extends React.Component {
@@ -25,7 +26,7 @@ class ProjectCard extends React.Component {
       <div position={this.position} className="project">
         <img
           className="project-image"
-          src={this.url}
+          src={GlobalVariables.GOOGLE_DRIVE_PREFIX + this.url}
           alt="project"
           height="250px"
           onMouseEnter={(e) => this.showDetail(e)}

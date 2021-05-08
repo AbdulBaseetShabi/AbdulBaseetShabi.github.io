@@ -1,18 +1,19 @@
 import "./aboutme.css";
-import background from "../../assets/images/aboutme.jpg";
-import profilepicture from "../../assets/images/profile.jpg";
 import CustomButton from "../../widget/button/custombutton";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
 import Socials from "../../widget/socials/socials";
 import GlobalFunctions from "../../global/global-functions";
+import GlobalVariables from "../../global/global-variables";;
 
 function AboutMe(props) {
   let resume_link ="https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
+  let backgroud = "1TxWFnb7fcauid0i-_SOZzPLopmV9PdA9";
+  let profilepicture = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
   return (
     <div
       className="page"
       id="aboutme"
-      style={{ backgroundImage: `url(${background})` }}
+      style={{ backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${backgroud})` }}
     >
       <div id="profile-picture-main-container">
         <div
@@ -24,7 +25,7 @@ function AboutMe(props) {
         <div
           id="profile-picture"
           style={{
-            backgroundImage: `url(${profilepicture})`,
+            backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${profilepicture})`,
           }}
         ></div>
       </div>

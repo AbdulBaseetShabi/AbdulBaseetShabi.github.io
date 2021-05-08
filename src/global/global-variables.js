@@ -1,5 +1,4 @@
-const website = require('../assets/project/website.png').default
-
+const GOOGLE_DRIVE_PREFIX ="https://drive.google.com/uc?export=view&id=";
 // Education
 const EDUCATION = [
   {
@@ -242,7 +241,7 @@ const PROJECTS = [
     source_code_link: "https://github.com/AbdulBaseetShabi/web-resume",
     description:
       "This project is a web application that highlight my experiences.",
-    image: website,
+    image: "1bhhFCL67o7Nuij-qV5Ad5wDa2GVr0gZk",
   },
 ];
 
@@ -253,4 +252,5 @@ module.exports = {
   WORK,
   VOLUNTEER,
   PROJECTS,
+  GOOGLE_DRIVE_PREFIX
 };
