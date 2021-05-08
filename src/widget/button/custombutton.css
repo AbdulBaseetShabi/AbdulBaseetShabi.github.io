@@ -1,14 +1,13 @@
 #custom-button:hover{
-    opacity: 90%;
     cursor: pointer;
 }
 
 #custom-button{
-    opacity: 80%;
     text-transform: uppercase;
     padding: 10px 50px;
     display: inline-block;
     margin: 0 auto;
     font-size: 0.7rem;
+    font-weight: bold;
     border-radius: 3px;
 }
