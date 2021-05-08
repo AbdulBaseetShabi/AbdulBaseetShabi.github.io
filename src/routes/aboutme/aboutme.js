@@ -7,6 +7,7 @@ import Socials from "../../widget/socials/socials";
 import GlobalFunctions from "../../global/global-functions";
 
 function AboutMe(props) {
+  let resume_link ="https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
   return (
     <div
       className="page"
@@ -62,7 +63,7 @@ function AboutMe(props) {
           backgroundColor= {props.isDarkMode ? "#7f5af0" : "yellow "}
           text="View Resume"
           onClick={() => {
-            GlobalFunctions.openLinkInNewTab("/assets/resume/resume.pdf");
+            GlobalFunctions.openLinkInNewTab(`https://docs.google.com/viewer?url=${resume_link}`);
           }}
         />
       </div>

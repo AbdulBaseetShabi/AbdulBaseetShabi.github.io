@@ -152,7 +152,7 @@ const WORK = [
       "Punctuality",
       "Knowledgeable",
       "Patience",
-      "Leadership"
+      "Leadership",
     ],
     summary: [],
     type: "work",
@@ -172,10 +172,9 @@ const VOLUNTEER = [
       "Punctuality",
       "Knowledgeable",
       "Patience",
-      "Leadership"
+      "Leadership",
     ],
-    summary: [
-    ],
+    summary: [],
     type: "volunteer",
   },
   {
@@ -190,10 +189,9 @@ const VOLUNTEER = [
       "Punctuality",
       "Knowledgeable",
       "Patience",
-      "Leadership"
+      "Leadership",
     ],
-    summary: [
-    ],
+    summary: [],
     type: "volunteer",
   },
   {
@@ -208,13 +206,11 @@ const VOLUNTEER = [
       "Punctuality",
       "Knowledgeable",
       "Patience",
-      "Leadership"
+      "Leadership",
     ],
-    summary: [
-    ],
+    summary: [],
     type: "volunteer",
-  }
-  ,
+  },
   {
     company: "Laurier Data Science Society - WLU",
     date_from: "Sept. 2020",
@@ -227,12 +223,11 @@ const VOLUNTEER = [
       "Punctuality",
       "Knowledgeable",
       "Patience",
-      "Leadership"
+      "Leadership",
     ],
-    summary: [
-    ],
+    summary: [],
     type: "volunteer",
-  }
+  },
 ];
 
 // Projects
@@ -241,31 +236,11 @@ const PROJECTS = [
     name: "Web Resume",
     languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
     tools_and_technologies: ["Visual Studio", "Git"],
-    production_link: "http://developer.mozilla.org",
-    source_code_link: "http://googlecode.com",
+    production_link: "https://abdulbaseetshabi.github.io/web-resume/",
+    source_code_link: "https://github.com/AbdulBaseetShabi/web-resume",
     description:
-      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
-    image: "/assets/images/test.jpg",
-  },
-  {
-    name: "Web Resume",
-    languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
-    tools_and_technologies: ["Visual Studio", "Git"],
-    production_link: "http://developer.mozilla.org",
-    source_code_link: "http://googlecode.com",
-    description:
-      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
-    image: "/assets/images/aboutme.jpg",
-  },
-  {
-    name: "Web Resume",
-    languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
-    tools_and_technologies: ["Visual Studio", "Git"],
-    production_link: "",
-    source_code_link: "http://googlecode.com",
-    description:
-      "The tears of a clown make my lipstick run, but my shower cap is still intact.",
-    image: "/assets/images/aboutme.jpg",
+      "This project is a web application that highlight my experiences.",
+    image: "/assets/images/website.png",
   },
 ];
 
@@ -275,5 +250,5 @@ module.exports = {
   COOPS,
   WORK,
   VOLUNTEER,
-  PROJECTS
-}
+  PROJECTS,
+};
