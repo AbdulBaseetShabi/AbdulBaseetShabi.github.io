@@ -47,3 +47,11 @@
   bottom: 3px;
   width: 100%;
 }
+
+#project-title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 10%;
+  padding: 10px 0;
+  width: 80%;
+}

@@ -12,6 +12,17 @@ function Projects(props) {
       style={{ backgroundColor: props.isDarkMode ? "#242629" : "green" }}
       onMouseLeave={() => GlobalFuntions.closeProjects("-1")}
     >
+      <div style={{ position: "relative", width: "100%" }}>
+        <label
+          id="project-title"
+          className="inline-block-label"
+          style={{
+            backgroundColor: props.isDarkMode ? "#16161a" : "green",
+          }}
+        >
+          My Projects
+        </label>
+      </div>
       {GlobalVariables.PROJECTS.map((project, index) => {
         return (
           <ProjectCard
