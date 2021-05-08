@@ -23,19 +23,19 @@
 
 .direction-icon {
   position: absolute;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .direction-icon:hover {
   cursor: pointer;
-  opacity: 100%;
+  opacity: 1;
 }
 
 /* Button */
 .view-detail-button {
   width: 200px;
   height: 40px;
-  opacity: 60%;
+  opacity: 0.6;
   margin: 10px auto;
   border-radius: 10px;
   display: flex;
@@ -46,7 +46,7 @@
 
 .view-detail-button:hover,
 .view-detail-button > label {
-  opacity: 100%;
+  opacity: 1;
   cursor: pointer;
 }
 

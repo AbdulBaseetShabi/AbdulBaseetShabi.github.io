@@ -21,7 +21,7 @@
   width: 85%;
   min-height: 58vh;
   margin: 1.5rem auto auto auto;
-  opacity: 0%;
+  opacity: 0;
   display: flex;
 }
 
@@ -62,7 +62,7 @@
 .education-card {
   text-align: center;
   padding: 3rem 1.5rem;
-  opacity: 0%;
+  opacity: 0;
   width: 50%;
 }
 

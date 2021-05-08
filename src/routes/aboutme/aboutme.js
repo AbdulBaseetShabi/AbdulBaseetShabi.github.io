@@ -51,7 +51,7 @@ function AboutMe(props) {
             fontSize: "5rem",
             textAlign: "center",
             paddingTop: "0.5rem",
-            opacity: "95%",
+            opacity: "0.95",
           }}
           specialCharaterStyle={{ color: "#BB6BD9", fontWeight: "Bold" }}
         />
