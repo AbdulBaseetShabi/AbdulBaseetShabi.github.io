@@ -59,14 +59,13 @@ function AboutMe(props) {
       <div id="custom-button-container">
         <CustomButton
           backgroundColor= {props.isDarkMode ? "#7f5af0" : "yellow "}
-          opacity="80%"
           text="View Resume"
           onClick={() => {
             GlobalFunctions.openLinkInNewTab("/assets/resume/resume.pdf");
           }}
         />
       </div>
-      <div id="svg-container">
+      {/* <div id="svg-container">
         <svg
           width="100%"
           viewBox="0 0 1440 121"
@@ -79,7 +78,7 @@ function AboutMe(props) {
             fillOpacity="0.98"
           />
         </svg>
-      </div>
+      </div> */}
       <div id="socials-container">
         <Socials orientation="horizontal" />
       </div>
