@@ -5,7 +5,6 @@ import GlobalVariables from "../../global/global-variables";
 import EducationCard from "./educationcard";
 import HorizontalLine from "../../widget/horizontalline/horizontalline";
 
-
 class Education extends React.Component {
   constructor(props) {
     super(props);
@@ -64,8 +63,15 @@ class Education extends React.Component {
   }
 
   render() {
+    let cardsBackgroundColor = this.props.isDarkMode ? "#16161A" : "blue";
     return (
-      <div className="page" id="education">
+      <div
+        className="page"
+        id="education"
+        style={{
+          backgroundColor: this.props.isDarkMode ? "#242629" : "green",
+        }}
+      >
         <div id="education-container">
           {GlobalVariables.EDUCATION.map((education, index) => {
             return (
@@ -76,6 +82,7 @@ class Education extends React.Component {
                 program={education.program}
                 from={education.from}
                 to={education.to}
+                backgroundColor={cardsBackgroundColor}
               />
             );
           })}
@@ -83,7 +90,7 @@ class Education extends React.Component {
         <div
           id="activity-card"
           style={{
-            backgroundColor: "#272C45",
+            backgroundColor: cardsBackgroundColor,
           }}
         >
           <div>
@@ -103,9 +110,15 @@ class Education extends React.Component {
               );
             })}
           </div>
-          <div className="reflection-container">
+          <div
+            className="reflection-container"
+            style={{
+              backgroundColor: this.props.isDarkMode ? "black" : "white",
+              borderColor: this.props.isDarkMode ? "black" : "white",
+            }}
+          >
             <label className="activity-reflection-header">Reflection</label>
-            <HorizontalLine color="white" />
+            <HorizontalLine color={this.props.isDarkMode ? "white" : "black"} />
             {this.state.reflection.length === 0 && !this.selected ? (
               <label
                 className="inline-block-label"

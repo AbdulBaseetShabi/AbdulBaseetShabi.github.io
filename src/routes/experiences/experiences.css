@@ -1,7 +1,3 @@
-#experiences {
-  background-color: #272c45;
-}
-
 .experience-title {
   font-weight: bold;
   font-size: 2rem;
@@ -39,7 +35,6 @@
 .view-detail-button {
   width: 200px;
   height: 40px;
-  background-color: #272c45;
   opacity: 60%;
   margin: 10px auto;
   border-radius: 10px;

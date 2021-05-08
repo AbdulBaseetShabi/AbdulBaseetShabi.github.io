@@ -1,13 +1,14 @@
 import background from "../../assets/images/thankyou.jpg";
+import background2 from "../../assets/images/thankyou2.jpg";
 import Socials from "../aboutme/social/socials";
 
-function ThankYou() {
+function ThankYou(props) {
   return (
     <div
       id="thankyou"
       className="page"
       style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${props.isDarkMode ? background : background2})`,
         backgroundSize: "cover",
         paddingTop: "0",
         display: "flex",

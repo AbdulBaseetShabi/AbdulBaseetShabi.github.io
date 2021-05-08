@@ -2,6 +2,7 @@ import React from "react";
 import "./experiences.css";
 
 import GlobalVariables from "../../global/global-variables";
+import GlobalFunctions from "../../global/global-functions";
 import Arrow from "../../widget/arrow/arrow";
 
 import ExperienceCard from "./experiencecard.js";
@@ -15,7 +16,7 @@ function DisplayedExperience(props) {
         <label
           className="inline-block-label experience-title"
           style={{
-            backgroundColor: "#0f0e17",
+            backgroundColor: props.backgroundColor,
           }}
         >
           {type === "coop"
@@ -28,7 +29,12 @@ function DisplayedExperience(props) {
       {props.experience.map((x, index) => {
         return (
           <div key={index} style={{ position: "relative" }}>
-            <ExperienceCard showDetails={props.showDetails} details={x} />
+            <ExperienceCard
+              showDetails={props.showDetails}
+              details={x}
+              backgroundColor={props.backgroundColor}
+              buttonColor={props.buttonColor}
+            />
           </div>
         );
       })}
@@ -61,6 +67,7 @@ class Experiences extends React.Component {
   }
 
   showDetails(show, details) {
+    GlobalFunctions.scrollToElement("experiences");
     this.setState({ show_details: show, details: details });
   }
 
@@ -73,7 +80,13 @@ class Experiences extends React.Component {
     let animate_slideshow =
       this.state.changed_page === 1 ? "enter-left" : "enter-right";
     return (
-      <div id="experiences" className="page">
+      <div
+        id="experiences"
+        className="page"
+        style={{
+          backgroundColor: this.props.isDarkMode ? "#16161a" : "orangered",
+        }}
+      >
         <div id="slide-show">
           <div
             className="direction-icon"
@@ -104,18 +117,24 @@ class Experiences extends React.Component {
               <DisplayedExperience
                 showDetails={this.showDetails}
                 experience={GlobalVariables.COOPS}
+                backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+                buttonColor={this.props.isDarkMode ? "#7f5af0" : "yellow"}
               />
             ) : null}
             {current_page === 1 ? (
               <DisplayedExperience
                 showDetails={this.showDetails}
                 experience={GlobalVariables.WORK}
+                backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+                buttonColor={this.props.isDarkMode ? "#7f5af0" : "yellow"}
               />
             ) : null}
             {current_page === 2 ? (
               <DisplayedExperience
                 showDetails={this.showDetails}
                 experience={GlobalVariables.VOLUNTEER}
+                backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+                buttonColor={this.props.isDarkMode ? "#7f5af0" : "yellow"}
               />
             ) : null}
           </div>
@@ -126,6 +145,8 @@ class Experiences extends React.Component {
               closeDetails={() => {
                 this.showDetails(false, null);
               }}
+              backgroundColor={this.props.isDarkMode ? "#242629" : "green"}
+              buttonColor={this.props.isDarkMode ? "#7f5af0" : "yellow"}
             />
           ) : null}
         </div>

@@ -9,7 +9,7 @@ function DetailsModal(props) {
       <div
         id="main-modal"
         style={{
-          backgroundColor: "#0F0E17",
+          backgroundColor: props.backgroundColor,
         }}
       >
         <div id="details-summary" style={{ padding: "2rem" }}>
@@ -53,8 +53,8 @@ function DetailsModal(props) {
           <div
             id="summary-header"
             style={{
-              borderTop: "4px solid #272C45",
-              borderBottom: "4px solid #272C45",
+              borderTop: `4px solid ${props.buttonColor}`,
+              borderBottom: `4px solid ${props.buttonColor}`,
             }}
           >
             <label
@@ -75,7 +75,7 @@ function DetailsModal(props) {
           })}
         </div>
         <div style={{ position: "absolute", bottom: "20px", width: "100%" }}>
-          <DetailButton showDetails={props.closeDetails} text="Close" />
+          <DetailButton showDetails={props.closeDetails} text="Close" backgroundColor={props.buttonColor}/>
         </div>
       </div>
     </div>

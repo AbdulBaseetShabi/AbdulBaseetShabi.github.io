@@ -52,6 +52,7 @@ class Socials extends React.Component {
     }
   }
   render() {
+    let backgroundColorToolTip = "#272c45";
     let style_container =
       this.props.orientation === "horizontal"
         ? {}
@@ -63,8 +64,8 @@ class Socials extends React.Component {
           };
     let style_tooltip =
       this.props.orientation === "horizontal"
-        ? { marginLeft: "10px" }
-        : { position: "relative", bottom: "-48px", left: "-58px" };
+        ? { marginLeft: "10px", backgroundColor: backgroundColorToolTip }
+        : { position: "relative", bottom: "-48px", left: "-58px", backgroundColor: backgroundColorToolTip };
     return (
       <div style={style_container}>
         {SOCIALS.map((social, index) => {

@@ -32,7 +32,7 @@ class ProjectCard extends React.Component {
         ></img>
         <div
           style={{
-            backgroundColor: "#272c45",
+            backgroundColor: this.props.backgroundColor,
           }}
           className="project-detail"
         >
@@ -77,12 +77,14 @@ class ProjectCard extends React.Component {
                   noOfButtons={
                     this.details.production_link.length !== 0 ? 2 : 1
                   }
+                  backgroundColor = {this.props.buttonColor}
                 />
                 {this.details.production_link.length !== 0 ? (
                   <CustomButton
                     link={this.details.production_link}
                     text="Production"
                     noOfButtons={2}
+                    backgroundColor = {this.props.buttonColor}
                   />
                 ) : null}
               </div>

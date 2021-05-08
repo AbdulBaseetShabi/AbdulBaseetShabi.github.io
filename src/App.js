@@ -27,7 +27,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="app">
+      <div id="app" style={{color: this.state.isDarkMode ? '#fffffe' : '#000000'}}>
         <NavigationBar
           isDarkMode={this.state.isDarkMode}
           changeTheme={this.changeTheme}

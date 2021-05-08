@@ -8,7 +8,7 @@ function CustomButton(props) {
         GlobalFuntions.openLinkInNewTab(props.link);
       }}
       style={{
-        backgroundColor: "#0F0E17",
+        backgroundColor: props.backgroundColor,
         width: `calc((100% / ${props.noOfButtons}) - (5px * ${props.noOfButtons})`,
       }}
     >

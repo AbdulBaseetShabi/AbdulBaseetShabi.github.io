@@ -4,12 +4,12 @@ import GlobalFuntions from "../../global/global-functions.js";
 import GlobalVariables from "../../global/global-variables.js";
 import ProjectCard from "./projectcard.js";
 
-function Projects() {
+function Projects(props) {
   return (
     <div
       id="projects"
       className="page"
-      style={{ backgroundColor: "#0F0E17" }}
+      style={{ backgroundColor: props.isDarkMode ? "#242629" : "green" }}
       onMouseLeave={() => GlobalFuntions.closeProjects("-1")}
     >
       {GlobalVariables.PROJECTS.map((project, index) => {
@@ -18,6 +18,8 @@ function Projects() {
             key={index}
             position={index.toString()}
             details={project}
+            backgroundColor={props.isDarkMode ? "#16161a" : "purple"}
+            buttonColor={props.isDarkMode ? "#7f5af0" : "yellow"}
           />
         );
       })}

@@ -3,6 +3,7 @@ function EducationCard(props) {
     <div
       style={{
         margin: props.position % 2 === 0 ? "0 1rem 0 0" : "0 0 0 1rem",
+        backgroundColor: props.backgroundColor
       }}
       className="education-card"
       position={props.position}
