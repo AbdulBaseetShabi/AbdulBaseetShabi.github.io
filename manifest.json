@@ -1,7 +1,17 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "ABS Web Resune",
+  "name": "Abdul-Baseet Shabi's Web Resume",
   "icons": [
+    {
+      "src": "/assets/images/profile.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/profile.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
   ],
   "start_url": ".",
   "display": "standalone",
