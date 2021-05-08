@@ -25,8 +25,14 @@ function closeProjects(exception) {
   }
 }
 
+function scrollToElement(id){
+  const element = document.getElementById(id);
+  element.scrollIntoView();
+}
+
 module.exports = {
   openLinkInNewTab,
   isElementInViewport,
-  closeProjects
+  closeProjects,
+  scrollToElement
 };

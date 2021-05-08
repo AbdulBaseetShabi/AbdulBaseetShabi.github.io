@@ -1,7 +1,4 @@
 #navigation-bar{
-    /* background-color: transparent; */
-    background-color: #0f0e17;
-    /* font-size: larger; */
     position: sticky;
     top: 0;
     width: 100%;
@@ -17,7 +14,7 @@
     text-align: center;
 }
 .navigation-item:hover{
-    border-bottom: 3px solid #fffffe;
+    border-bottom: 3px solid;
     cursor: pointer;
 }
 

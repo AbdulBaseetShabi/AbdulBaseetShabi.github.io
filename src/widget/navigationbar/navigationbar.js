@@ -1,11 +1,13 @@
 import React from "react";
 import "./navigationbar.css";
 
+import GlobalFuntions from "../../global/global-functions.js";
+
 const ROUTES = [
-  { name: "about me", route: "#aboutme" },
-  { name: "education", route: "#education" },
-  { name: "experiences", route: "#experiences" },
-  { name: "projects", route: "#projects" },
+  { name: "about me", route: "aboutme" },
+  { name: "education", route: "education" },
+  { name: "experiences", route: "experiences" },
+  { name: "projects", route: "projects" },
 ];
 
 class NavigationBar extends React.Component {
@@ -18,7 +20,10 @@ class NavigationBar extends React.Component {
 
   render() {
     return (
-      <div id="navigation-bar">
+      <div
+        id="navigation-bar"
+        style={{ backgroundColor: this.props.isDarkMode ? "#0f0e17" : "green" }}
+      >
         <div style={{ width: "15%" }}>Logo</div>
         <div style={{ width: "70%", display: "flex" }}>
           {ROUTES.map((route, index) => {
@@ -30,10 +35,18 @@ class NavigationBar extends React.Component {
                   alignItems: "center",
                 }}
                 key={index}
+                onClick={() => {
+                  GlobalFuntions.scrollToElement(route.route);
+                }}
               >
-                <a href={route.route} className="navigation-item">
-                  <label>{route.name.toUpperCase()}</label>
-                </a>
+                <label
+                  className="navigation-item"
+                  style={{
+                    borderColor: this.props.isDarkMode ? "white" : "black",
+                  }}
+                >
+                  {route.name.toUpperCase()}
+                </label>
               </div>
             );
           })}
