@@ -1,3 +1,5 @@
+const website = require('../assets/project/website.png').default
+
 // Education
 const EDUCATION = [
   {
@@ -240,7 +242,7 @@ const PROJECTS = [
     source_code_link: "https://github.com/AbdulBaseetShabi/web-resume",
     description:
       "This project is a web application that highlight my experiences.",
-    image: "/assets/images/website.png",
+    image: website,
   },
 ];
 
