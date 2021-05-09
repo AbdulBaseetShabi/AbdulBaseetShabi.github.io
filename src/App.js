@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDarkMode: false,
+      isDarkMode: true,
     };
     this.changeTheme = this.changeTheme.bind(this);
   }
