@@ -279,6 +279,16 @@ const PROJECTS = [
       "A mobile application built on Flutter SDK used to update the content on my website via the Web Resume REST API",
     image: "1uxtCTvYaUPKJky5vBasGDWHCML9zJWGw",
   },
+  {
+    name: "KARA",
+    languages_and_frameworks: ["Python", "React", "JavaScript", "HTML", "CSS", "SQL"],
+    tools_and_technologies: ["Visual Studio", "Git"],
+    production_link: "",
+    source_code_link: "https://github.com/AbdulBaseetShabi/KARA_465",
+    description:
+      "A web based application that serves as a more user friendly Database Management System for MSSQL servers, especially for individuals who are not familiar with SQL. This project frontend was built using React and its backend was built on Python (Flask library).",
+    image: "14_lOg_iv0p1s04JPNfjt08JpVWIyvG2W",
+  },
 ];
 
 module.exports = {
