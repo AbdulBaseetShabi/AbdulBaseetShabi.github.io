@@ -3,17 +3,22 @@ import CustomButton from "../../widget/button/custombutton";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
 import Socials from "../../widget/socials/socials";
 import GlobalFunctions from "../../global/global-functions";
-import GlobalVariables from "../../global/global-variables";;
+import GlobalVariables from "../../global/global-variables";
 
 function AboutMe(props) {
-  let resume_link ="https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
-  let backgroud = "1TxWFnb7fcauid0i-_SOZzPLopmV9PdA9";
+  let resume_link =
+    "https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
+  let backgroud = props.isDarkMode
+    ? "1TxWFnb7fcauid0i-_SOZzPLopmV9PdA9"
+    : "1ZhiZk7ZRtTtt6kK8qYybQiLAq8Daoapp";
   let profilepicture = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
   return (
     <div
       className="page"
       id="aboutme"
-      style={{ backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${backgroud})` }}
+      style={{
+        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${backgroud})`,
+      }}
     >
       <div id="profile-picture-main-container">
         <div
@@ -29,13 +34,12 @@ function AboutMe(props) {
           }}
         ></div>
       </div>
-      <div style={{ margin: "3.5rem auto" }} 
-          className="show-bottom-console">
+      <div style={{ margin: "3.5rem auto" }} className="show-bottom-console">
         <AnimatedConsole
           width="30%"
           prefixText="$ "
           suffixText="|"
-          backgroundColor= {props.isDarkMode ? "#16161A" : "#FFFFFE"}
+          backgroundColor={props.isDarkMode ? "#16161A" : "#f6f6f6"}
           texts={[
             "Welcome to $My Website$",
             "$NOTE:$it is still under development",
@@ -55,21 +59,30 @@ function AboutMe(props) {
             paddingTop: "0.5rem",
             opacity: "0.95",
           }}
-          specialCharaterStyle={{ color: "#BB6BD9", fontWeight: "Bold" }}
+          specialCharaterStyle={{
+            color: props.isDarkMode ? "#BB6BD9" : "#0e172c",
+            fontWeight: "Bold",
+          }}
         />
       </div>
 
       <div id="custom-button-container">
         <CustomButton
-          backgroundColor= {props.isDarkMode ? "#7f5af0" : "yellow "}
+          backgroundColor={props.isDarkMode ? "#0f0e17" : "#f6f6f6"}
           text="View Resume"
           onClick={() => {
-            GlobalFunctions.openLinkInNewTab(`https://docs.google.com/viewer?url=${resume_link}`);
+            GlobalFunctions.openLinkInNewTab(
+              `https://docs.google.com/viewer?url=${resume_link}`
+            );
           }}
         />
       </div>
       <div id="socials-container">
-        <Socials orientation="horizontal" animate={true}/>
+        <Socials
+          orientation="horizontal"
+          animate={true}
+          isDarkMode={props.isDarkMode}
+        />
       </div>
     </div>
   );

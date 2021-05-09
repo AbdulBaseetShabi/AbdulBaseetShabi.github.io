@@ -9,7 +9,9 @@ function ThankYou(props) {
       id="thankyou"
       className="page"
       style={{
-        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${props.isDarkMode ? dark_mode_background : light_mode_background})`,
+        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${
+          props.isDarkMode ? dark_mode_background : light_mode_background
+        })`,
         backgroundSize: "cover",
         paddingTop: "0",
         display: "flex",
@@ -41,7 +43,7 @@ function ThankYou(props) {
           Please feel free to reach me on any of the platform below and remember
           to check out my GitHub repository
         </label>
-        <Socials orientation="vertical" />
+        <Socials orientation="vertical" isDarkMode={props.isDarkMode} />
       </div>
     </div>
   );

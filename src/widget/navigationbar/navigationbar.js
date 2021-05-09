@@ -22,7 +22,7 @@ class NavigationBar extends React.Component {
     return (
       <div
         id="navigation-bar"
-        style={{ backgroundColor: this.props.isDarkMode ? "#0f0e17" : "green" }}
+        style={{ backgroundColor: this.props.isDarkMode ? "#0f0e17" : "#f6f6f6" }}
       >
         <div style={{ width: "15%" }}>Logo</div>
         <div style={{ width: "70%", display: "flex" }}>

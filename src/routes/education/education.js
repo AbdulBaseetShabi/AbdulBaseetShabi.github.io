@@ -14,6 +14,7 @@ class Education extends React.Component {
     this.animationCheck = null;
     this.selected = false;
   }
+
   componentDidMount() {
     this.animationCheck = setInterval(() => {
       const education_cards = document.getElementsByClassName("education-card");
@@ -53,6 +54,14 @@ class Education extends React.Component {
     }, 100);
   }
 
+  changeBackground(e, inherit) {
+    e.target.style.background = inherit
+      ? "inherit"
+      : this.props.isDarkMode
+      ? "#7f5af0"
+      : "#F8E4DA";
+  }
+
   componentWillUnmount() {
     clearInterval(this.animationCheck);
   }
@@ -63,13 +72,13 @@ class Education extends React.Component {
   }
 
   render() {
-    let cardsBackgroundColor = this.props.isDarkMode ? "#16161A" : "blue";
+    let cardsBackgroundColor = this.props.isDarkMode ? "#16161A" : "#fffffe";
     return (
       <div
         className="page"
         id="education"
         style={{
-          backgroundColor: this.props.isDarkMode ? "#242629" : "green",
+          backgroundColor: this.props.isDarkMode ? "#242629" : "#f6f6f6",
         }}
       >
         <div id="education-container">
@@ -104,6 +113,12 @@ class Education extends React.Component {
                   onClick={() => {
                     this.showReflection(activity.reflection);
                   }}
+                  onMouseEnter={(e) => {
+                    this.changeBackground(e, false);
+                  }}
+                  onMouseLeave={(e) => {
+                    this.changeBackground(e, true);
+                  }}
                 >
                   {activity.name}
                 </label>
@@ -113,7 +128,7 @@ class Education extends React.Component {
           <div
             className="reflection-container"
             style={{
-              backgroundColor: this.props.isDarkMode ? "black" : "white",
+              backgroundColor: this.props.isDarkMode ? "black" : "#F8E4DA",
               borderColor: this.props.isDarkMode ? "black" : "white",
             }}
           >

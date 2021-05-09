@@ -9,7 +9,7 @@ function Projects(props) {
     <div
       id="projects"
       className="page"
-      style={{ backgroundColor: props.isDarkMode ? "#242629" : "green" }}
+      style={{ backgroundColor: props.isDarkMode ? "#242629" : "#f6f6f6" }}
       onMouseLeave={() => GlobalFuntions.closeProjects("-1")}
     >
       <div style={{ position: "relative", width: "100%" }}>
@@ -17,7 +17,7 @@ function Projects(props) {
           id="project-title"
           className="inline-block-label"
           style={{
-            backgroundColor: props.isDarkMode ? "#16161a" : "green",
+            backgroundColor: props.isDarkMode ? "#16161a" : "#FFFFFE",
           }}
         >
           My Projects
@@ -29,8 +29,8 @@ function Projects(props) {
             key={index}
             position={index.toString()}
             details={project}
-            backgroundColor={props.isDarkMode ? "#16161a" : "purple"}
-            buttonColor={props.isDarkMode ? "#7f5af0" : "yellow"}
+            backgroundColor={props.isDarkMode ? "#16161a" : "#F8E4DA"}
+            buttonColor={props.isDarkMode ? "#7f5af0" : "#FFFFFE"}
           />
         );
       })}

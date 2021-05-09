@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalFunction from "../../global/global-functions";
 import "./socials.css";
 
 const SOCIALS = [
@@ -31,10 +32,6 @@ class Socials extends React.Component {
     this.changeToDefaultColor = this.changeToDefaultColor.bind(this);
   }
 
-  openLink(link) {
-    window.open(link, "_blank");
-  }
-
   changeToModeColor(event) {
     const icons = document.getElementsByClassName("icon");
     for (let i = 0; i < icons.length; i++) {
@@ -52,7 +49,7 @@ class Socials extends React.Component {
     }
   }
   render() {
-    let backgroundColorToolTip = "#272c45";
+    let backgroundColorToolTip = this.props.isDarkMode ? "#272c45" : "#DDE3F1";
     let style_container =
       this.props.orientation === "horizontal"
         ? {}
@@ -64,8 +61,18 @@ class Socials extends React.Component {
           };
     let style_tooltip =
       this.props.orientation === "horizontal"
-        ? { marginLeft: "10px", backgroundColor: backgroundColorToolTip }
-        : { position: "relative", bottom: "-48px", left: "-58px", backgroundColor: backgroundColorToolTip };
+        ? {
+            marginLeft: "10px",
+            backgroundColor: backgroundColorToolTip,
+            opacity: 0.8,
+          }
+        : {
+            position: "relative",
+            bottom: "-48px",
+            left: "-58px",
+            backgroundColor: backgroundColorToolTip,
+            opacity: 0.8,
+          };
     return (
       <div style={style_container}>
         {SOCIALS.map((social, index) => {
@@ -75,9 +82,11 @@ class Socials extends React.Component {
                 onMouseEnter={this.changeToModeColor}
                 onMouseLeave={this.changeToDefaultColor}
                 onClick={() => {
-                  this.openLink(social.url);
+                  GlobalFunction.openLinkInNewTab(social.url);
                 }}
-                className={`${social.icon} fa-3x icon ${this.props.animate ? "roll-in" : ""}`}
+                className={`${social.icon} fa-3x icon ${
+                  this.props.animate ? "roll-in" : ""
+                }`}
               ></i>
               <label className="tooltip" style={style_tooltip}>
                 {social.name}

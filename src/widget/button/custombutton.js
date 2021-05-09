@@ -4,7 +4,7 @@ function CustomButton(props) {
   return (
     <div
       id="custom-button"
-      style={{ backgroundColor: props.backgroundColor, borderRadius: "10px", userSelect: "none"}}
+      style={{ backgroundColor: props.backgroundColor, userSelect: "none"}}
       onClick={props.onClick}
     >
       {props.text}
