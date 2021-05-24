@@ -30,6 +30,7 @@ class ProjectCard extends React.Component {
           alt="project"
           height="250px"
           onMouseEnter={(e) => this.showDetail(e)}
+          onClick = {(e) => GlobalFuntions.openLinkInNewTab(this.details.source_code_link)}
         ></img>
         <div
           style={{
