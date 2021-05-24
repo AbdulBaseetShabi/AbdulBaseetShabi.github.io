@@ -10,5 +10,10 @@
     font-size: 1rem;
     font-weight: bold;
     width: 30%;
+    opacity: 0.6;
     box-sizing: border-box;
+}
+
+#custom-button:hover{
+    opacity: 0.89;
 }

@@ -266,7 +266,7 @@ const PROJECTS = [
     production_link: "https://desolate-shelf-14448.herokuapp.com/",
     source_code_link: "https://github.com/AbdulBaseetShabi/resume_backend",
     description:
-      "An REST API built on NodeJS and Express, used to update ,via a mobile app and get the content to display on my website",
+      "A REST API built on NodeJS and Express, that is used to update (via a mobile app) and get the content to display on my website",
     image: "1zs8eyFarmICVLZMtDRDv-gyyQTFTjTBa",
   },
   {

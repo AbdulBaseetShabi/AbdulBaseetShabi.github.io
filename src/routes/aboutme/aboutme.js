@@ -39,7 +39,7 @@ function AboutMe(props) {
           width="30%"
           prefixText="$ "
           suffixText="|"
-          backgroundColor={props.isDarkMode ? "#16161A" : "#f6f6f6"}
+          backgroundColor={props.isDarkMode ? "#16161A" : "#fffffe"}
           texts={[
             "Welcome to $My Website$",
             "$NOTE:$it is still under development",
@@ -68,7 +68,7 @@ function AboutMe(props) {
 
       <div id="custom-button-container">
         <CustomButton
-          backgroundColor={props.isDarkMode ? "#0f0e17" : "#f6f6f6"}
+          backgroundColor={props.isDarkMode ? "#7f5af0" : "#fffffe"}
           text="View Resume"
           onClick={() => {
             GlobalFunctions.openLinkInNewTab(
