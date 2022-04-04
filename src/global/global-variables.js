@@ -1,4 +1,5 @@
 const GOOGLE_DRIVE_PREFIX = "https://drive.google.com/uc?export=view&id=";
+const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
 // Education
 const EDUCATION = [
   {
@@ -292,11 +293,12 @@ const PROJECTS = [
 ];
 
 module.exports = {
+  GOOGLE_DRIVE_PREFIX,
+  PROFILE_PICTURE,
   EDUCATION,
   ACTIVITIES,
   COOPS,
   WORK,
   VOLUNTEER,
   PROJECTS,
-  GOOGLE_DRIVE_PREFIX,
 };
