@@ -16,5 +16,23 @@
 }
 
 .code-line{
-    margin: 0.2rem 0;
+    margin:0;
+}
+
+.circle{
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    float: left;
+    margin: auto 3px;
+}
+
+#console-button-container{
+    position: relative;
+    top: 7px;
+}
+
+#console-header {
+    background-color: slategray;
+    width: 100%;
 }
