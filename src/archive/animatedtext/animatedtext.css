@@ -1,0 +1,17 @@
+#suffix-text{
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}
+ 
