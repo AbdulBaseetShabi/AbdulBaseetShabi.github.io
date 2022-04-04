@@ -1,63 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navigationbar.css";
 
-import GlobalFuntions from "../../global/global-functions.js";
-
 const ROUTES = [
-  { name: "about me", route: "aboutme" },
-  { name: "education", route: "education" },
-  { name: "experiences", route: "experiences" },
-  { name: "projects", route: "projects" },
+  { name: "about me", route: "/about" },
+  { name: "education", route: "/education" },
+  { name: "experiences", route: "/experiences" },
+  { name: "projects", route: "/projects" },
 ];
+
+const LINK_STYLE = {
+  display: "block",
+  textAlign: "center",
+  width: `calc(${100 / ROUTES.length}% - 5%)`,
+  margin: "auto 0",
+  height: "40px",
+  float: "left",
+  color: "white",
+  borderRadius: "10px",
+  border: "1px solid rgba(255, 255, 255, 0)",
+  textDecoration: "none",
+}
 
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_route: ROUTES[0].name,
     };
   }
-
+ 
   render() {
     return (
-      <div
-        id="navigation-bar"
-        style={{ backgroundColor: this.props.isDarkMode ? "#0f0e17" : "#f6f6f6" }}
-      >
-        <div style={{ width: "15%" }}>Logo</div>
-        <div style={{ width: "70%", display: "flex" }}>
+      <div id="nav-bar">
+        <div id="nav-bar-content">
           {ROUTES.map((route, index) => {
             return (
-              <div
-                style={{
-                  width: `${100 / ROUTES.length}%`,
-                  display: "flex",
-                  alignItems: "center",
-                }}
-                key={index}
-                onClick={() => {
-                  GlobalFuntions.scrollToElement(route.route);
-                }}
-              >
-                <label
-                  className="navigation-item"
-                  style={{
-                    borderColor: this.props.isDarkMode ? "white" : "black",
-                  }}
-                >
-                  {route.name.toUpperCase()}
-                </label>
-              </div>
+              <Link to={route.route} className="nav-bar-link" key={index} style={LINK_STYLE}>
+                <label style={{lineHeight: '40px'}}>{route.name}</label>
+              </Link>
             );
           })}
-        </div>
-        <div style={{ width: "15%" }}>
-          <i
-            className="fas fa-adjust fa-2x"
-            onClick={() => {
-              this.props.changeTheme();
-            }}
-          ></i>
         </div>
       </div>
     );
