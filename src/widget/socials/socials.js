@@ -4,90 +4,92 @@ import "./socials.css";
 
 const SOCIALS = [
   {
-    name: "Facebook",
-    url: "https://www.facebook.com/Bsquare480/",
-    icon: "fab fa-facebook",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/bsquare480/",
-    icon: "fab fa-instagram",
+    name: "Resume",
+    url: "https://docs.google.com/viewer?url=https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf",
+    src: "https://img.icons8.com/plasticine/90/000000/file.png",
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/abdulbaseet/",
-    icon: "fab fa-linkedin",
+    src: "https://img.icons8.com/bubbles/100/000000/linkedin.png",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/bsquare480/",
+    src: "https://img.icons8.com/clouds/100/000000/instagram-new--v2.png",
+  },
+  {
+    name: "Email",
+    url: "mailto:shab7430@mylaurier.ca",
+    src: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/000000/external-email-digital-nomad-flaticons-lineal-color-flat-icons.png",
   },
   {
     name: "GitHub",
+    src: "https://img.icons8.com/cute-clipart/75/000000/github.png",
     url: "https://github.com/AbdulBaseetShabi",
-    icon: "fab fa-github",
   },
+
 ];
 
 class Socials extends React.Component {
   constructor(props) {
     super(props);
-    this.changeToModeColor = this.changeToModeColor.bind(this);
-    this.changeToDefaultColor = this.changeToDefaultColor.bind(this);
+    this.animate = this.animate.bind(this);
+    this.removeAnimation = this.removeAnimation.bind(this);
   }
 
-  changeToModeColor(event) {
-    const icons = document.getElementsByClassName("icon");
-    for (let i = 0; i < icons.length; i++) {
-      icons[i].style.color = this.props.darkMode ? "#4E4559" : "#272C45";
-    }
-    event.target.style.color = "inherit";
+  animate(event) {
     event.target.nextElementSibling.style.visibility = "visible";
   }
 
-  changeToDefaultColor() {
-    const icons = document.getElementsByClassName("icon");
-    for (let i = 0; i < icons.length; i++) {
-      icons[i].style.color = "inherit";
-      icons[i].nextElementSibling.style.visibility = "hidden";
-    }
+  removeAnimation(event) {
+    event.target.nextElementSibling.style.visibility = "hidden";
   }
+
   render() {
-    let backgroundColorToolTip = this.props.isDarkMode ? "#272c45" : "#DDE3F1";
     let style_container =
       this.props.orientation === "horizontal"
         ? {}
         : {
             display: "flex",
             alignItems: "center",
-            margin: "0 auto",
+            margin: "1.5rem auto",
+            width: "50vw",
             justifyContent: "center",
           };
     let style_tooltip =
       this.props.orientation === "horizontal"
         ? {
             marginLeft: "10px",
-            backgroundColor: backgroundColorToolTip,
+            backgroundColor: "#272c45",
             opacity: 0.8,
+            color: "white",
           }
         : {
+            backgroundColor: "#272c45",
+            // opacity: 0.8,
+            color: "white",
+            display: "block",
+            textAlign: "center",
             position: "relative",
-            bottom: "-48px",
-            left: "-58px",
-            backgroundColor: backgroundColorToolTip,
-            opacity: 0.8,
+            bottom: "0",
+            fontStyle: "italic",
           };
     return (
-      <div style={style_container}>
+      <div id="socials-container" style={style_container}>
         {SOCIALS.map((social, index) => {
           return (
-            <div className="social" key={index}>
-              <i
-                onMouseEnter={this.changeToModeColor}
-                onMouseLeave={this.changeToDefaultColor}
+            <div className="social" key={index} style={{width: `${100/SOCIALS.length}%`}}>
+              <img
+                className="icon"
+                alt={social.name}
+                src={social.src}
+                onMouseEnter={this.animate}
+                onMouseLeave={this.removeAnimation}
                 onClick={() => {
                   GlobalFunction.openLinkInNewTab(social.url);
                 }}
-                className={`${social.icon} fa-3x icon ${
-                  this.props.animate ? "roll-in" : ""
-                }`}
-              ></i>
+              ></img>
               <label className="tooltip" style={style_tooltip}>
                 {social.name}
               </label>

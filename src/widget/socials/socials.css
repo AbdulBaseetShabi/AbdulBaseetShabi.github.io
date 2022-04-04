@@ -1,16 +1,33 @@
 .social {
-  margin: 2rem 0;
-  width: fit-content;
+  margin: auto;
   align-items: center;
-  display: flex;
-}
-
-.social > i {
+  display: block;
   cursor: pointer;
 }
 
+@keyframes moveup {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -20px;
+  }
+}
+
+.social .icon:hover{
+  position: relative;
+  animation: moveup 200ms ease 1 normal forwards;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.icon{
+  margin: 0 auto;
+  display: block;
+}
+
 .tooltip {
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 7px;
   visibility: hidden;
 }
