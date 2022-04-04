@@ -1,31 +1,31 @@
-#profile-picture-sub-container {
-  opacity: 0.6;
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  margin: auto;
+#about-me-body{
+  position: absolute;
+  top: 10%;
+  width: 100%;
 }
 
 #profile-picture-main-container {
-  position: relative;
+  width: 100%;
+}
+
+#profile-picture-sub-container {
+  height: 220px;
+  width: 220px;
+  border-radius: 120px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }
 
 #profile-picture {
   position: absolute;
   top: 0.6rem;
-  left: calc(50% - 90px); /* 50% minus half the div width */
-  height: 180px;
-  width: 180px;
-  border-radius: 100px;
-}
-
-#socials-container {
-  position: absolute;
-  top: calc(50% - 144px);
-  left: 1.3rem;
-}
-
-#custom-button-container {
-  text-align: center;
-  margin-top: 2rem;
+  left: calc(50% - 100px); /* 50% minus half the div width */
+  height: 200px;
+  width: 200px;
+  border-radius: 120px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

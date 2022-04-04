@@ -1,26 +1,14 @@
-import "./aboutme.css";
-import CustomButton from "../../widget/button/custombutton";
+
+import { ReactComponent as Background} from '../../svgs/about.svg';
+
+import GlobalVariables from "../../global/global-variables";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
 import Socials from "../../widget/socials/socials";
-import GlobalFunctions from "../../global/global-functions";
-import GlobalVariables from "../../global/global-variables";
+import "./aboutme.css";
 
-function AboutMe(props) {
-  let resume_link =
-    "https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
-  let backgroud = props.isDarkMode
-    ? "1TxWFnb7fcauid0i-_SOZzPLopmV9PdA9"
-    : "1ZhiZk7ZRtTtt6kK8qYybQiLAq8Daoapp";
-  let profilepicture = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
+function ProfilePic() {
   return (
-    <div
-      className="page"
-      id="aboutme"
-      style={{
-        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${backgroud})`,
-      }}
-    >
-      <div id="profile-picture-main-container">
+    <div id="profile-picture-main-container">
         <div
           id="profile-picture-sub-container"
           style={{
@@ -30,62 +18,71 @@ function AboutMe(props) {
         <div
           id="profile-picture"
           style={{
-            backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${profilepicture})`,
+            backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${GlobalVariables.PROFILE_PICTURE})`,
           }}
         ></div>
       </div>
-      <div style={{ margin: "3.5rem auto" }} className="show-bottom-console">
-        <AnimatedConsole
-          width="30%"
-          prefixText="$ "
-          suffixText="|"
-          backgroundColor={props.isDarkMode ? "#16161A" : "#fffffe"}
-          texts={[
-            "Welcome to $My Website$",
-            "$NOTE:$it is still under development",
-            "My name is$Abdul-Baseet Shabi",
-            "$Too long?$Feel free to call me$Abdul$",
-            "This website is $custom made$with a little help from StackOverflow",
-            "Notice an $ERROR?$Please let me know",
-            "You can reach me on any$platforms$to the$left of your screen",
-          ]}
-          textChangeInterval={1200}
-          typingSpeed={50}
-          generalStyle={{
-            fontWeight: "bold",
-            width: "100%",
-            fontSize: "5rem",
-            textAlign: "center",
-            paddingTop: "0.5rem",
-            opacity: "0.95",
-          }}
-          specialCharaterStyle={{
-            color: props.isDarkMode ? "#BB6BD9" : "#0e172c",
-            fontWeight: "Bold",
-          }}
-        />
-      </div>
-
-      <div id="custom-button-container">
-        <CustomButton
-          backgroundColor={props.isDarkMode ? "#7f5af0" : "#fffffe"}
-          text="View Resume"
-          onClick={() => {
-            GlobalFunctions.openLinkInNewTab(
-              `https://docs.google.com/viewer?url=${resume_link}`
-            );
-          }}
-        />
-      </div>
-      <div id="socials-container">
-        <Socials
-          orientation="horizontal"
-          animate={true}
-          isDarkMode={props.isDarkMode}
-        />
-      </div>
-    </div>
   );
+}
+
+function Body() {
+  return (
+    <div id="about-me-body">
+      <ProfilePic/>
+      <AnimatedConsole
+        commandPrefix={
+          <label style={{color: '#21CB8B', fontWeight: 'bolder'}}>
+            abdul@Abdul
+            <span style={{color: '#FFFFFF'}}>:</span>
+            <label style={{color: '#3B8EEA'}}>
+              /user/value
+            </label>
+          </label>
+        }
+        suffixText="*"
+        texts={[
+          "👋🏿 Hi, I am Abdul-Baseet Shabi",
+          "🙂 Abdul for short",
+          "⭐ Welcome to my personal website ⭐",
+          "🏗️ It was built from scratch on React",
+          "👨‍💻 Full-Stack Developer", 
+          "🤖 Technological Euthasits", 
+          "📚 Favorite stack: MERN (MongoDB + Express + React + NodeJs)",
+          "🤳🏿 Favourite language: Tie between JavaScript and Python",
+          "💹 Unique value proposition: Experience in varying industries"
+        ]}
+        command={" $ cat abdul_summary.txt"}
+        commandTypingSpeed={50}
+        backgroundColor={"black"}
+        textChangeInterval={1500}
+        typingSpeed={20}
+        typingStyle={{
+          fontSize: "1rem",
+          textAlign: "initial",
+          // paddingTop: "0.5rem",
+          color: "#FFFFFE",
+          fontFamily: "'Ubuntu Mono', monospace",
+          width: "100%",
+          opacity: "0.95",
+        }}
+        specialCharaterStyle={{
+          color: "#BB6BD9",
+          fontWeight: "Bold",
+        }}
+      />
+      <Socials
+      />
+      </div>
+  )
+}
+
+function AboutMe(props) {
+  return (
+    <div className="page" style={{backgroundColor: "#370961"}}>
+      <Background/>
+      <Body/>
+    </div>
+  )
 }
 
 export default AboutMe;
