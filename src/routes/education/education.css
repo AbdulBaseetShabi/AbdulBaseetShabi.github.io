@@ -1,11 +1,13 @@
-#education {
-  padding-bottom: 10px;
+#education{
+  position: absolute;
+  top: 0;
+  background-color: transparent;
 }
 
 #education-container {
   display: flex;
   width: 85%;
-  margin: 0 auto;
+  margin: 5rem auto;
 }
 
 .activity {
@@ -58,11 +60,48 @@
 }
 
 /* Education Card */
-.education-card {
+
+@keyframes glass{
+  0% {
+    left: -100%
+  }
+  20%, 100% {
+    left: 150%
+  }
+}
+
+#education-card {
   text-align: center;
   padding: 3rem 1.5rem;
-  opacity: 0;
-  width: 50%;
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  overflow: hidden;
+  border-radius: 1rem 3rem;
+}
+
+#education-card:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  cursor: pointer;
+  transform: skewX(45deg);
+  animation: glass 2500ms ease 0s infinite forwards alternate;
+}
+
+#education-card:hover{
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+
+#education-card label{
+  cursor: pointer;
 }
 
 .school-label {

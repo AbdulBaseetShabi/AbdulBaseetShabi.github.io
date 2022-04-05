@@ -1,20 +1,12 @@
 const GOOGLE_DRIVE_PREFIX = "https://drive.google.com/uc?export=view&id=";
 const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
 // Education
-const EDUCATION = [
-  {
+const EDUCATION = {
     school: "Wilfrid Laurier University",
-    program: "Business Administration",
-    from: "2017",
-    to: "2021 (Expected)",
-  },
-  {
-    school: "Wilfrid Laurier University",
-    program: "Computer Science",
-    from: "2017",
-    to: "2021 (Expected)",
-  },
-];
+    program: "Business Administration & Computer Science",
+    from: "September 2017",
+    to: "August 2022 (Expected)",
+};
 
 const ACTIVITIES = [
   {
