@@ -10,11 +10,16 @@ const EDUCATION = {
 
 const ACTIVITIES = [
   {
-    name: "President - Laurier Computing Society",
+    position: "President",
+    org: "Laurier Computing Society",
     reflection: [
       "If I had to pick, this would be my favourite experience. It was the first time I had a leadership role aside from being the eldest child. It put me in a position where I was the key decision-maker. My decisions had a direct impact on the success or the failure of the club.",
       "This role spans over three semesters, two of which are active club seasons. In this role, I had learning experiences during the club's first active semester. Some decisions were made that could have been better. But overall, the experience improved my creative and problem-solving skillset, which resulted in a multitude of successful events.",
     ],
+    responsibilities: [
+      'fly'
+    ],
+    duration: "Aug 2020 - March 2022",
   },
   {
     name: "Global Engagement Student Ambassador - Laurier International",
