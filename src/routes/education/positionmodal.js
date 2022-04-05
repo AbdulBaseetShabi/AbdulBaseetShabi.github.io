@@ -5,7 +5,7 @@ function Modal(props) {
   let activity = props.activity;
   return (
     <div className="modal">
-      <div className="modal-content enter-left">
+      <div className="modal-content enter-left" style={{position: "relative"}}>
         <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
           <span style={{fontWeight: "bold"}}>Position:</span> {activity.position}
         </label>
@@ -35,7 +35,9 @@ function Modal(props) {
             </ul>
           )}
         </div>
-        <CustomButton backgroundColor={"#3B8EEA"} text={"Close"} onClick={()=>props.navigation(-1)}/>
+        <div style={{position: "absolute", bottom: "1rem", width: "100%", left: "0"}}>
+          <CustomButton backgroundColor={"#3B8EEA"} text={"Close"} onClick={()=>props.navigation(-1)}/>
+        </div>
       </div>
       {(props.current_position === 0) ? null : <img  onClick={()=>props.navigation(props.current_position - 1)} style={{ position: "absolute", left: "2rem", cursor: "pointer", userSelect: "none"}} alt="Go Left" src="https://img.icons8.com/flat-round/64/000000/left--v1.png"/>}
       {(props.current_position === props.max_position) ? null : <img  onClick={()=>props.navigation(props.current_position + 1)} style={{ position: "absolute", right: "2rem", cursor: "pointer", userSelect: "none" }} alt="Go Right" src="https://img.icons8.com/flat-round/64/000000/right--v1.png"/>}
