@@ -5,20 +5,20 @@ import "./App.css";
 import NavigationBar from "./widget/navigationbar/navigationbar";
 import AboutMe from "./routes/aboutme/aboutme.js";
 import Education from "./routes/education/education";
-import Experiences from "./routes/experiences/experiences";
+import Experience from "./routes/experience/experience";
 import Projects from "./routes/projects/projects";
 
 function App (props) { 
     return (
       <Router>
         <NavigationBar/>
-        <Routes>
-          <Route exact path="/" element={<AboutMe  />}/>
+        <Routes>         
           <Route exact path="/about" element={<AboutMe  />}/>
           <Route exact path="/education" element={<Education  />}/>
-          <Route exact path="/experience" element={<Experiences  />}/>
+          <Route exact path="/experience" element={<Experience  />}/>
           <Route exact path="/projects" element={<Projects  />}/>
-        </Routes>
+          <Route exact path="*" element={<AboutMe  />}/>
+         </Routes>
       </Router>
     );
 }
