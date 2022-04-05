@@ -1,0 +1,46 @@
+import React from "react";
+import CustomButton from "../../widget/button/custombutton";
+
+function Modal(props) {
+  let activity = props.activity;
+  return (
+    <div className="modal">
+      <div className="modal-content enter-left">
+        <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
+          <span style={{fontWeight: "bold"}}>Position:</span> {activity.position}
+        </label>
+        <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
+        <span style={{fontWeight: "bold"}}>Club/Organization:</span> {activity.org}
+        </label>
+        <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
+        <span style={{fontWeight: "bold"}}>Duration:</span> {activity.duration}
+        </label>
+        <br />
+        <hr className="hr-thick" />
+        <label className="inline-block-label-uncentered">
+          Responsibilities
+        </label>
+        <hr className="hr-thick" />
+        <div>
+          {activity.responsibilities === undefined ||
+            activity.responsibilities.length === 0 ? (
+            <label className="inline-block-label" style={{lineHeight: "30vh"}}>
+              No responsibilities added yet
+            </label>
+          ) : (
+            <ul>
+              {activity.responsibilities.map((responsibility) => {
+                return <li>{responsibility}</li>;
+              })}
+            </ul>
+          )}
+        </div>
+        <CustomButton backgroundColor={"#3B8EEA"} text={"Close"} onClick={()=>props.navigation(-1)}/>
+      </div>
+      {(props.current_position === 0) ? null : <img  onClick={()=>props.navigation(props.current_position - 1)} style={{ position: "absolute", left: "2rem", cursor: "pointer", userSelect: "none"}} alt="Go Left" src="https://img.icons8.com/flat-round/64/000000/left--v1.png"/>}
+      {(props.current_position === props.max_position) ? null : <img  onClick={()=>props.navigation(props.current_position + 1)} style={{ position: "absolute", right: "2rem", cursor: "pointer", userSelect: "none" }} alt="Go Right" src="https://img.icons8.com/flat-round/64/000000/right--v1.png"/>}
+    </div>
+  );
+}
+
+export default Modal;
