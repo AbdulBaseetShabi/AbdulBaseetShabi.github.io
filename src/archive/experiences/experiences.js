@@ -3,7 +3,7 @@ import "./experiences.css";
 
 import GlobalVariables from "../../global/global-variables";
 import GlobalFunctions from "../../global/global-functions";
-import Arrow from "../../widget/arrow/arrow";
+import Arrow from "../arrow/arrow";
 
 import ExperienceCard from "./experiencecard.js";
 import DetailsModal from "./detailsmodal.js";
