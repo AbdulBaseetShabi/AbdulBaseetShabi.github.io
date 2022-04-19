@@ -2,10 +2,10 @@ import React from "react";
 import "./animatedconsole.css";
 
 const CONSOLE_STYLE = {
-  minHeight: "40vh",
-  maxWidth: "50vw",
+  height: "60vh",
+  maxWidth: "55vw",
   lineHeight: "2rem",
-  margin: "3rem auto 1rem auto",
+  margin: "auto",
   padding: "0.5rem",
   userSelect: "none",
   textAlign: "center",
