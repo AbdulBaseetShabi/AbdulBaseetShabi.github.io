@@ -10,8 +10,8 @@ const EDUCATION = {
 
 const ACTIVITIES = [
   {
-    position: "President",
-    org: "Laurier Computing Society",
+    title: "President",
+    company: "Laurier Computing Society",
     reflection: [
       "If I had to pick, this would be my favourite experience. It was the first time I had a leadership role aside from being the eldest child. It put me in a position where I was the key decision-maker. My decisions had a direct impact on the success or the failure of the club.",
       "This role spans over three semesters, two of which are active club seasons. In this role, I had learning experiences during the club's first active semester. Some decisions were made that could have been better. But overall, the experience improved my creative and problem-solving skillset, which resulted in a multitude of successful events.",
@@ -19,8 +19,18 @@ const ACTIVITIES = [
     responsibilities: [
       'fly'
     ],
-    duration: "Aug 2020 - March 2022",
+    main_skills: [
+      "Communication",
+      "Team Work",
+      "Punctuality",
+      "Knowledgeable",
+      "Patience",
+      "Leadership",
+    ],
+    date_from: "Aug 2020",
+    date_to: "March 2022"
   },
+  
   {
     name: "Global Engagement Student Ambassador - Laurier International",
     reflection: [
@@ -55,7 +65,7 @@ const ACTIVITIES = [
 ];
 
 // Experiences
-const COOPS = [
+const EXPERIENCES = [
   {
     company: "Rodan Energy Solutions",
     date_from: "Sept. 2020",
@@ -71,12 +81,10 @@ const COOPS = [
       "VBA",
       "Python",
     ],
-    summary: [
-      "Compared to my other coop terms, this coop was unique in many ways. One, it was the first full-term I worked virtually from my bedroom. Secondly, it allowed me to work more autonomously. A repetitive task or process would be presented to me during my weekly meeting, and  I had full creative control on deciding what the best approach was to automate it. I had to factor in the level of technological savviness of the person that would use the tool, the approach that relied the least on 3rd party libraries or tools, and the company's current technological infrastructure.",
-      "I worked on one web application to automate sending paystubs to vendors. The project was built on NodeJS and relied on a pdf and CSV data to know who to email the appropriate information. I worked on 2 Excel-based solutions using VBA, to read, represent and export data in an appropriate format that can be imported on QuickBooks. Also, I developed a python tool that auto-filled information from a CSV file to a PDF file.",
-      "Overall, I appreciated the trust, the level of support I got, and the constant check-up to see how I was coping with the situation at the time (COVID)."
+    responsibilities: [
+      
     ],
-    type: "coop",
+    isCoop: true,
   },
   {
     company: "ATS Automation",
@@ -94,11 +102,8 @@ const COOPS = [
       "SQL",
     ],
     summary: [
-      "This role was structured and supportive that if I was ever confused or lost, I knew where to ask for help. I had the opportunity to work with a lot of amazing individuals, both full-time and part-time employees. I learnt various aspects of the development workflow ranging from coding to testing and approving a task.",
-      "I worked on a web-based application built on C#. Even as a developer, I got the opportunity to be involved with testing, seeing aspects of automating a test, and checking potential memory leaks in an application.",
-      "I appreciated the guidance and the individuals I got to meet, who helped me be better as a professional."
     ],
-    type: "coop",
+    isCoop: true,
   },
   {
     company: "The Incubator - The Co-operators Group Limited",
@@ -115,33 +120,30 @@ const COOPS = [
       "NodeJS",
     ],
     summary: [],
-    type: "coop",
+    isCoop: true,
   },
-];
-
-const WORK = [
   {
-    company: "Mathematics and Statistics Support - WLU",
+    company: "Mathematics and Statistics Support",
     date_from: "Jan. 2019",
     date_to: "April 2021",
     title: "Peer Tutor/Mentor",
     location: "Waterloo, ON, Canada",
     main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
     summary: [],
-    type: "work",
+    isPartTime: true,
   },
   {
-    company: "Science Department - WLU",
+    company: "Science Department",
     date_from: "Sept. 2019",
     date_to: "April 2021",
     title: "Instructional Assistant",
     location: "Waterloo, ON, Canada",
     main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
     summary: [],
-    type: "work",
+    isPartTime: true,
   },
   {
-    company: "Mathematics Department - WLU",
+    company: "Mathematics Department",
     date_from: "Sept. 2018",
     date_to: "Dec. 2019",
     title: "Proctor and Marker",
@@ -153,10 +155,10 @@ const WORK = [
       "Patience",
     ],
     summary: [],
-    type: "work",
+    isPartTime: true,
   },
   {
-    company: "Teaching and Learning - WLU",
+    company: "Teaching and Learning",
     date_from: "May 2018",
     date_to: "Sept. 2018",
     title: "Headstart Ambassador",
@@ -170,78 +172,7 @@ const WORK = [
       "Leadership",
     ],
     summary: [],
-    type: "work",
-  },
-];
-
-const VOLUNTEER = [
-  {
-    company: "Student Union - WLU",
-    date_from: "May 2019",
-    date_to: "April 2020",
-    title: "Icebreaker",
-    location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
-    summary: [],
-    type: "volunteer",
-  },
-  {
-    company: "Laurier International - WLU",
-    date_from: "June 2018",
-    date_to: "April 2019",
-    title: "Global Engagement Student Ambassador",
-    location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
-    summary: [],
-    type: "volunteer",
-  },
-  {
-    company: "Laurier Computing Society - WLU",
-    date_from: "May 2020",
-    date_to: "April 2021",
-    title: "President",
-    location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
-    summary: [],
-    type: "volunteer",
-  },
-  {
-    company: "Laurier Data Science Society - WLU",
-    date_from: "Sept. 2020",
-    date_to: "April 2021",
-    title: "Web Master",
-    location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
-    summary: [],
-    type: "volunteer",
+    isPartTime: true,
   },
 ];
 
@@ -294,8 +225,76 @@ module.exports = {
   PROFILE_PICTURE,
   EDUCATION,
   ACTIVITIES,
-  COOPS,
-  WORK,
-  VOLUNTEER,
+  EXPERIENCES,
   PROJECTS,
 };
+
+
+// {
+//   company: "Student Union",
+//   date_from: "May 2019",
+//   date_to: "April 2020",
+//   title: "Icebreaker",
+//   location: "Waterloo, ON, Canada",
+//   main_skills: [
+//     "Communication",
+//     "Team Work",
+//     "Punctuality",
+//     "Knowledgeable",
+//     "Patience",
+//     "Leadership",
+//   ],
+//   summary: [],
+//   type: "volunteer",
+// },
+// {
+//   company: "Laurier International",
+//   date_from: "June 2018",
+//   date_to: "April 2019",
+//   title: "Global Engagement Student Ambassador",
+//   location: "Waterloo, ON, Canada",
+//   main_skills: [
+//     "Communication",
+//     "Team Work",
+//     "Punctuality",
+//     "Knowledgeable",
+//     "Patience",
+//     "Leadership",
+//   ],
+//   summary: [],
+//   type: "volunteer",
+// },
+// {
+//   company: "Laurier Computing Society",
+//   date_from: "May 2020",
+//   date_to: "April 2021",
+//   title: "President",
+//   location: "Waterloo, ON, Canada",
+//   main_skills: [
+//     "Communication",
+//     "Team Work",
+//     "Punctuality",
+//     "Knowledgeable",
+//     "Patience",
+//     "Leadership",
+//   ],
+//   summary: [],
+//   type: "volunteer",
+// },
+// {
+//   company: "Laurier Data Science Society",
+//   date_from: "Sept. 2020",
+//   date_to: "April 2021",
+//   title: "Web Master",
+//   location: "Waterloo, ON, Canada",
+//   main_skills: [
+//     "Communication",
+//     "Team Work",
+//     "Punctuality",
+//     "Knowledgeable",
+//     "Patience",
+//     "Leadership",
+//   ],
+//   summary: [],
+//   type: "volunteer",
+// },
