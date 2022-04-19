@@ -1,0 +1,22 @@
+#experience{
+  position: absolute;
+  top: 0;
+  background: transparent;
+}
+
+.experience-column{
+  width: 33.3%;
+  float: left;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.experience-card {
+  max-width: 80%;
+  /* border: 1px solid black; */
+  margin: 1rem auto;padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(50px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
