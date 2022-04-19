@@ -1,4 +1,3 @@
-
 import { ReactComponent as Background} from '../../svgs/about.svg';
 
 import GlobalVariables from "../../global/global-variables";
