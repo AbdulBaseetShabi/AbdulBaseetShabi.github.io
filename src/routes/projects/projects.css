@@ -1,57 +1,6 @@
-.project-detail {
-  opacity: 0;
-  width: 1%;
-  display: none;
-  height: 250px;
-  margin: 3px auto;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.project-name {
-  margin-top: 10px;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.project-image {
-  margin: 0 auto;
-  border-radius: 20px;
-  display: block;
-  cursor: pointer;
-}
-
-.project-image:hover {
-  cursor: pointer;
-}
-
-.project {
-  width: 100%;
-  height: auto;
-  border-radius: 30px;
-  background-color: transparent;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.container-custom-button {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.container-languages-tools {
-  height: auto;
+#projects{
   position: absolute;
-  bottom: 3px;
-  width: 100%;
-}
-
-#project-title {
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0 10%;
-  padding: 10px 0;
-  width: 80%;
+  top: 0;
+  /* background-color: #43ff641a; */
+  background-color: #C2FFCD;
 }
