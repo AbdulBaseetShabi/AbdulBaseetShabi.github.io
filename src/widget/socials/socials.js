@@ -43,6 +43,7 @@ class Socials extends React.Component {
   }
 
   removeAnimation(event) {
+    //TODO: fix tooltip, align them: use relative parent -> absolut child
     event.target.nextElementSibling.style.visibility = "hidden";
   }
 
@@ -62,11 +63,12 @@ class Socials extends React.Component {
         ? {
             marginLeft: "10px",
             backgroundColor: "#272c45",
-            opacity: 0.8,
+            // opacity: 0.8,
             color: "white",
           }
         : {
-            backgroundColor: "#272c45",
+            // backgroundColor: "#272c45",
+            backgroundColor: "black",
             // opacity: 0.8,
             color: "white",
             display: "block",

@@ -23,7 +23,7 @@ function ProfilePic() {
       </div>
   );
 }
-
+// TDO: do a split instead of straight down
 function Body() {
   return (
     <div id="about-me-body">

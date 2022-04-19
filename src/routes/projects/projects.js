@@ -39,7 +39,7 @@ class Projects extends React.Component {
               <span style={{ color: "green" }}>From </span>
               <span style={{}}>Projects </span>
               <span style={{ color: "blue" }}>Where </span>
-              <span style={{}}>Project.Type</span> = []
+              <span style={{}}>Project.Type</span> = [all, automation, front-end, back-end, full-stack]
             </label>
           </div>
           <div id="project-content">

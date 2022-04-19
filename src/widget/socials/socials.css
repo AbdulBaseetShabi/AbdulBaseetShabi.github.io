@@ -27,7 +27,7 @@
 }
 
 .tooltip {
-  opacity: 0.9;
+  /* opacity: 0.9; */
   padding: 7px;
   visibility: hidden;
 }

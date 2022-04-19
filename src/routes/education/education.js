@@ -103,6 +103,7 @@ class Education extends React.Component {
                   />
                 );
               })}
+              <label className="inline-block-label">Pssst: Click on an activity to view it</label>
             </div>
             {this.state.position !== -1 ? (
               <Modal
