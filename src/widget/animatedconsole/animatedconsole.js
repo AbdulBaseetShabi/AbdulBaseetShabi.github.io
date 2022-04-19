@@ -42,7 +42,9 @@ class AnimatedConsole extends React.Component {
         if (prevState.stop_index_command === this.props.command.length) {
           //once the command has stopped typing
           clearInterval(this.commandInterval); //clear it
+          this.commandInterval = null;
           clearTimeout(this.waitPeriod);
+          this.waitPeriod = null;
           this.textInterval = setInterval(() => {
             //satrt the text interval
             this.setState((prevState, prevProps) => {
@@ -57,6 +59,7 @@ class AnimatedConsole extends React.Component {
                 ) {
                   //check if it is the last one
                   clearInterval(this.textInterval); //clear the time interval
+                  this.textInterval = null;
                   return null;
                 } else {
                   return {
@@ -87,8 +90,11 @@ class AnimatedConsole extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.textInterval);
+    this.textInterval = null;
     clearInterval(this.commandInterval);
+    this.commandInterval = null;
     clearTimeout(this.waitPeriod);
+    this.waitPeriod = null;
   }
 
   render() {

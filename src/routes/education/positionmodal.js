@@ -7,13 +7,13 @@ function Modal(props) {
     <div className="modal">
       <div className="modal-content enter-left" style={{position: "relative"}}>
         <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
-          <span style={{fontWeight: "bold"}}>Position:</span> {activity.position}
+          <span style={{fontWeight: "bold"}}>Position:</span> {activity.title}
         </label>
         <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
-        <span style={{fontWeight: "bold"}}>Club/Organization:</span> {activity.org}
+        <span style={{fontWeight: "bold"}}>Club/Organization:</span> {activity.company}
         </label>
         <label className="inline-block-label-uncentered" style={{margin: "0.4rem 0"}}>
-        <span style={{fontWeight: "bold"}}>Duration:</span> {activity.duration}
+        <span style={{fontWeight: "bold"}}>Duration:</span> {activity.date_from} - {activity.date_to}
         </label>
         <br />
         <hr className="hr-thick" />

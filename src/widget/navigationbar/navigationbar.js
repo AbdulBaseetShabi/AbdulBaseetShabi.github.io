@@ -5,7 +5,7 @@ import "./navigationbar.css";
 const ROUTES = [
   { name: "about me", route: "/about" },
   { name: "education", route: "/education" },
-  { name: "experiences", route: "/experiences" },
+  { name: "experiences", route: "/experience" },
   { name: "projects", route: "/projects" },
 ];
 

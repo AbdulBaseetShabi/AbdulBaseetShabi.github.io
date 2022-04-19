@@ -41,16 +41,15 @@
   position: absolute;
   top: 0;
   left: -100%;
-  cursor: pointer;
   transform: skewX(45deg);
   animation: glass 2500ms ease 0s infinite forwards alternate;
 }
 
-#education-card:hover, .activity-card:hover{
-  transform: translateY(-5%);
+.activity-card:hover{
+  transform: translateY(-10%);
 }
 
-#education-card, #education-card label, .activity-card, .activity-card label{
+.activity-card, .activity-card label{
   cursor: pointer;
 }
 
