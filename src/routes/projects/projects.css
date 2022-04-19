@@ -1,6 +1,66 @@
 #projects{
   position: absolute;
   top: 0;
-  /* background-color: #43ff641a; */
-  background-color: #C2FFCD;
+}
+
+#project-screen{
+  width: 95%;
+  height: 80%;
+  border-radius: 50px;
+  margin: 1.5rem auto;
+  background-color: #c2e1fb;
+  border: 1.5rem solid black;
+}
+
+#project-pane{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+}
+
+.project-card{
+  border: 1px solid black;
+  float: left;
+  margin: 0.5rem;
+  position: relative;
+}
+
+.project-card-description{
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  height: 15rem;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+#project-content-list {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  /* position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%); */
+}
+
+#project-content {
+  width: 100%;
+  height: 90%;
+  /* position: relative; */
+}
+
+.project-image{
+  height: 15rem;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
 }

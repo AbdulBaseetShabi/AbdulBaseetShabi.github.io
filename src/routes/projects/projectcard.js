@@ -1,97 +1,52 @@
 import React from "react";
 
-import GlobalFuntions from "../../global/global-functions.js";
 import GlobalVariables from "../../global/global-variables.js";
-import CustomButton from "./custombutton.js";
+import GlobalFuntions from "../../global/global-functions.js";
 
 class ProjectCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      show_details: false,
-    };
-    this.url = this.props.details.image;
-    this.position = this.props.position;
-    this.details = this.props.details;
+    this.toggleDetail = this.toggleDetail.bind(this);
   }
 
-  showDetail(e) {
-    e.target.nextElementSibling.classList.add("show-bottom");
-    e.target.nextElementSibling.style.display = "block";
-    GlobalFuntions.closeProjects(this.position);
+  toggleDetail(e, show) {
+    if (show) {
+      e.target.nextElementSibling.style.display = "block";
+    }else{
+      e.target.style.display = "none";
+    }
   }
 
   render() {
+    let project = this.props.project;
     return (
-      <div position={this.position} className="project">
-        <img
-          className="project-image"
-          src={GlobalVariables.GOOGLE_DRIVE_PREFIX + this.url}
-          alt="project"
-          height="250px"
-          onMouseEnter={(e) => this.showDetail(e)}
-          onClick = {(e) => GlobalFuntions.openLinkInNewTab(this.details.source_code_link)}
-        ></img>
+      <div className="project-card" style={{ width: this.props.width }}>
         <div
+          className="project-image"
           style={{
-            backgroundColor: this.props.backgroundColor,
+            backgroundImage: `url(${
+              GlobalVariables.GOOGLE_DRIVE_PREFIX + project.image
+            })`,
           }}
-          className="project-detail"
+          onMouseEnter={(e) => this.toggleDetail(e, true)}
+        ></div>
+        <div
+          className="project-card-description enter-bottom"
+          onMouseLeave={(e) => this.toggleDetail(e, false)}
         >
-          <div style={{ position: "relative", height: "inherit" }}>
-            <label className="inline-block-label project-name">
-              {this.details.name}
-            </label>
-            <hr style={{ width: "80%" }} />
-
-            <p style={{ padding: "0 0.5rem" }}>{this.details.description}</p>
-            <div
-              className="container-languages-tools"
-            >
-              <label
-                className="inline-block-label-uncentered"
-                style={{
-                  margin: "0.5rem",
-                }}
-              >
-                <span style={{ fontWeight: "bold" }}>
-                  Langauges and Frameworks:{" "}
-                </span>
-                {this.details.languages_and_frameworks.join(", ")}
-              </label>
-              <label
-                className="inline-block-label-uncentered"
-                style={{
-                  margin: "0.5rem",
-                }}
-              >
-                <span style={{ fontWeight: "bold" }}>
-                  Tools and Technologies:{" "}
-                </span>
-                {this.details.tools_and_technologies.join(", ")}
-              </label>
-              <div
-                className="container-custom-button"
-              >
-                <CustomButton
-                  link={this.details.source_code_link}
-                  text="Source Code"
-                  noOfButtons={
-                    this.details.production_link.length !== 0 ? 2 : 1
-                  }
-                  backgroundColor = {this.props.buttonColor}
-                />
-                {this.details.production_link.length !== 0 ? (
-                  <CustomButton
-                    link={this.details.production_link}
-                    text="Production"
-                    noOfButtons={2}
-                    backgroundColor = {this.props.buttonColor}
-                  />
-                ) : null}
-              </div>
-            </div>
-          </div>
+          <label className="inline-block-label" style={{ fontWeight: "bolder" }}>{project.name}</label>
+          <hr />
+          <label>
+            <span style={{ fontWeight: "bolder" }}>Stack: </span>
+            <span style={{ fontStyle: "italic" }}>
+            {project.languages_and_frameworks.map((x, i) => {
+              if (i !== project.languages_and_frameworks.length - 1) {
+                return ` ${x} |`;
+              }
+              return ` ${x}`;
+            })}
+            </span>
+          </label>
         </div>
       </div>
     );
