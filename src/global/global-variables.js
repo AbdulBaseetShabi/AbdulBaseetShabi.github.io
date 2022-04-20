@@ -1,5 +1,5 @@
 const GOOGLE_DRIVE_PREFIX = "https://drive.google.com/uc?export=view&id=";
-const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
+// const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
 // Education
 const EDUCATION = {
     school: "Wilfrid Laurier University",
@@ -187,6 +187,7 @@ const PROJECTS = [
     description:
       "This project is a web application that highlight my experiences. It gives people an insight into my roles and experiences, and what I gained from them.",
     image: "1bhhFCL67o7Nuij-qV5Ad5wDa2GVr0gZk",
+    type: [2]
   },
   {
     name: "Web Resume REST API",
@@ -197,6 +198,7 @@ const PROJECTS = [
     description:
       "A REST API built on NodeJS and Express, that is used to update (via a mobile app) and get the content to display on my website",
     image: "1zs8eyFarmICVLZMtDRDv-gyyQTFTjTBa",
+    type: [3]
   },
   {
     name: "Web Resume Updater",
@@ -207,6 +209,7 @@ const PROJECTS = [
     description:
       "A mobile application built on Flutter SDK used to update the content on my website via the Web Resume REST API",
     image: "1uxtCTvYaUPKJky5vBasGDWHCML9zJWGw",
+    type: [2, 3, 4]
   },
   {
     name: "KARA",
@@ -217,12 +220,12 @@ const PROJECTS = [
     description:
       "A web based application that serves as a more user friendly Database Management System for MSSQL servers, especially for individuals who are not familiar with SQL. This project frontend was built using React and its backend was built on Python (Flask library).",
     image: "14_lOg_iv0p1s04JPNfjt08JpVWIyvG2W",
+    type: [1, 2, 3, 4]
   },
 ];
 
 module.exports = {
   GOOGLE_DRIVE_PREFIX,
-  PROFILE_PICTURE,
   EDUCATION,
   ACTIVITIES,
   EXPERIENCES,
