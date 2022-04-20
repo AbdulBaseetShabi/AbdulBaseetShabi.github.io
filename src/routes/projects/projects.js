@@ -105,7 +105,7 @@ class Projects extends React.Component {
                     key={index}
                     index={index}
                     showReflection={this.showReflection}
-                    width="30%"
+                    width="32%"
                   />
                 );
               })}

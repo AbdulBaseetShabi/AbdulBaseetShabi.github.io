@@ -218,7 +218,7 @@ const PROJECTS = [
     production_link: "",
     source_code_link: "https://github.com/AbdulBaseetShabi/KARA_CP465",
     description:
-      "A web based application that serves as a more user friendly Database Management System for MSSQL servers, especially for individuals who are not familiar with SQL. This project frontend was built using React and its backend was built on Python (Flask library).",
+      "A web based application that serves as a user friendly alternative to managing databases on MSSQL servers, especially for individuals who are not familiar with SQL.",
     image: "14_lOg_iv0p1s04JPNfjt08JpVWIyvG2W",
     type: [1, 2, 3, 4]
   },

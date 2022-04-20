@@ -84,7 +84,7 @@ class ProjectCard extends React.Component {
           >
             <div style={{width: show_prod ? "50%" : "100%", float: "left"}}>
               <CustomButton
-                text="Source Code"
+                text="Code"
                 backgroundColor="#3B8EEA"
                 onClick={() => {
                   GlobalFuntions.openLinkInNewTab(project.source_code_link);
@@ -94,7 +94,7 @@ class ProjectCard extends React.Component {
             <div style={{width: "50%", float: "left"}}>
               {show_prod ? (
                 <CustomButton
-                  text="Prod Code"
+                  text="Live"
                   onClick={() => {
                     GlobalFuntions.openLinkInNewTab(project.production_link);
                   }}
