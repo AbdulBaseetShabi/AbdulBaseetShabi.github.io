@@ -39,8 +39,8 @@ function Modal(props) {
           <CustomButton backgroundColor={"#3B8EEA"} text={"Close"} onClick={()=>props.navigation(-1)}/>
         </div>
       </div>
-      {(props.current_position === 0) ? null : <img  onClick={()=>props.navigation(props.current_position - 1)} style={{ position: "absolute", left: "2rem", cursor: "pointer", userSelect: "none"}} alt="Go Left" src="https://img.icons8.com/flat-round/64/000000/left--v1.png"/>}
-      {(props.current_position === props.max_position) ? null : <img  onClick={()=>props.navigation(props.current_position + 1)} style={{ position: "absolute", right: "2rem", cursor: "pointer", userSelect: "none" }} alt="Go Right" src="https://img.icons8.com/flat-round/64/000000/right--v1.png"/>}
+      {(props.current_position === 0) ? null : <img  onClick={()=>props.navigation(props.current_position - 1)} style={{ position: "absolute", left: "2rem", cursor: "pointer", userSelect: "none"}} alt="Go Left" src="https://img.icons8.com/material-outlined/64/3498DB/circled-left.png"/>}
+      {(props.current_position === props.max_position) ? null : <img  onClick={()=>props.navigation(props.current_position + 1)} style={{ position: "absolute", right: "2rem", cursor: "pointer", userSelect: "none" }} alt="Go Right" src="https://img.icons8.com/material-outlined/64/3498DB/circled-right.png"/>}
     </div>
   );
 }
