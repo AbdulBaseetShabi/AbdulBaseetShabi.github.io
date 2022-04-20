@@ -1,27 +1,8 @@
-import GlobalVariables from "../../global/global-variables";
+// import GlobalVariables from "../../global/global-variables";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
 import Socials from "../../widget/socials/socials";
 import "./aboutme.css";
 
-function ProfilePic() {
-  return (
-    <div id="profile-picture-main-container">
-      <div
-        id="profile-picture-sub-container"
-        style={{
-          backgroundColor: "#fffffe",
-        }}
-      ></div>
-      <div
-        id="profile-picture"
-        style={{
-          backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${GlobalVariables.PROFILE_PICTURE})`,
-        }}
-      ></div>
-    </div>
-  );
-}
-// TDO: do a split instead of straight down
 function Body() {
   return (
     <div id="about-me-body">
