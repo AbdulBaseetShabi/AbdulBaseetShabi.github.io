@@ -10,17 +10,19 @@ class ProjectCard extends React.Component {
   }
 
   toggleDetail(e, show) {
-    if (show) {
-      e.target.nextElementSibling.style.display = "block";
-    }else{
-      e.target.style.display = "none";
+    let target = e.target;
+    
+    if (show && target.classList.contains('project-image')) {
+      target.nextElementSibling.style.display = "block";
+    }else if (!show && target.classList.contains('project-card-description')){
+      target.style.display = "none";
     }
   }
 
   render() {
     let project = this.props.project;
     return (
-      <div className="project-card" style={{ width: this.props.width }}>
+      <div className="project-card enter-bottom" style={{ width: this.props.width }}>
         <div
           className="project-image"
           style={{
@@ -38,7 +40,7 @@ class ProjectCard extends React.Component {
           <hr />
           <label>
             <span style={{ fontWeight: "bolder" }}>Stack: </span>
-            <span style={{ fontStyle: "italic" }}>
+            <span>
             {project.languages_and_frameworks.map((x, i) => {
               if (i !== project.languages_and_frameworks.length - 1) {
                 return ` ${x} |`;
