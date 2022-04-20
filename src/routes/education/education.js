@@ -60,7 +60,7 @@ class Education extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      <div className="page" id="education">
         <canvas
           id="canvas-education"
           style={{
@@ -70,7 +70,7 @@ class Education extends React.Component {
         ></canvas>
         <div
           className="page"
-          id="education"
+          id="education-content"
           style={{
             color: "white",
           }}

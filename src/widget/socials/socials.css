@@ -1,7 +1,7 @@
 #socials-container{
   display: flex;
   align-items: center;
-  margin: 1.5rem auto;
+  margin: 0.5rem auto 0;
   justify-content: "center",
 }
 
@@ -9,7 +9,6 @@
   margin: auto;
   align-items: center;
   display: block;
-  cursor: pointer;
 }
 
 @keyframes moveup {
@@ -22,20 +21,20 @@
   }
 }
 
-.social .icon:hover{
+/* .social .icon:hover{
   position: relative;
   animation: moveup 200ms ease 1 normal forwards;
-  animation: name duration timing-function delay iteration-count direction fill-mode;
-}
+} */
 
 .icon{
   margin: 0 auto;
   display: block;
+  cursor: pointer;
 }
 
 .tooltip {
-  opacity: 0.6;
-  padding: 7px;
+  opacity: 0.9;
+  padding: 3px;
   visibility: hidden;
   background-color: black;
   color: white;

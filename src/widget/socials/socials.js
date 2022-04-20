@@ -25,7 +25,7 @@ const SOCIALS = [
   },
   {
     name: "GitHub",
-    src: "https://img.icons8.com/glyph-neue/70/000000/github.png",
+    src: "https://img.icons8.com/glyph-neue/64/FFFFFF/github.png",
     url: "https://github.com/AbdulBaseetShabi",
   },
 
@@ -54,7 +54,7 @@ class Socials extends React.Component {
           return (
             <div className="social" key={index} style={{width: `${100/SOCIALS.length}%`}}>
               <img
-                className="icon"
+                className="icon enter-left"
                 alt={social.name}
                 src={social.src}
                 onMouseEnter={this.animate}

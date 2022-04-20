@@ -39,14 +39,14 @@ class Experience extends React.Component {
         <div id="experience" className="page">
           <div className="experience-column">
             <label className="inline-block-label">Coop Experience</label>
-            {this.state.coop.map((exp) => {
-              return <ExperienceCard experience={exp} type={"coop"} />;
+            {this.state.coop.map((exp, index) => {
+              return <ExperienceCard experience={exp} key={index} type={"coop"} />;
             })}
           </div>
           <div className="experience-column">
             <label className="inline-block-label">Part Time Experience</label>
-            {this.state.parttime.map((exp) => {
-              return <ExperienceCard experience={exp} type={"part"} />;
+            {this.state.parttime.map((exp, index) => {
+              return <ExperienceCard experience={exp} key={index} type={"part"} />;
             })}
           </div>
           <div className="experience-column">Full Time Experience</div>

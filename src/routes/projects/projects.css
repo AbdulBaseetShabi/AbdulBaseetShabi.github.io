@@ -1,13 +1,12 @@
 #projects{
-  position: absolute;
-  top: 0;
+  padding-top: 3rem;
 }
 
 #project-screen{
   width: 95%;
   height: 80%;
   border-radius: 50px;
-  margin: 1.5rem auto;
+  margin: auto;
   background-color: #c2e1fb;
   border: 1.5rem solid black;
 }
@@ -42,18 +41,14 @@
 #project-content-list {
   width: 95%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 1rem auto;
-  /* position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%); */
 }
 
 #project-content {
   width: 100%;
   height: 90%;
-  /* position: relative; */
 }
 
 .project-image{
