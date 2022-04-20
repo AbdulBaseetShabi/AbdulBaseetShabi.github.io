@@ -5,25 +5,36 @@ import GlobalFuntions from "../../global/global-functions.js";
 import GlobalVariables from "../../global/global-variables.js";
 import ProjectCard from "./projectcard.js";
 
+const OPTIONS = ["all", "automation", "front-end", "back-end", "full-stack"];
+const FILTERSTYLE = {
+  textDecoration: "underline",
+  fontStyle: "italic",
+  color: "darkviolet",
+};
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       position: -1,
+      option: 0,
     };
     this.selected = false;
   }
 
   componentDidMount() {
-    // this.drawOnCanvas();
+  }
+
+  filterOptions(option) {
+    this.setState({ option: option });
   }
 
   render() {
+    let projects = this.state.option === 0 ? GlobalVariables.PROJECTS : GlobalVariables.PROJECTS.filter((project)=>{
+      return project.type.includes(this.state.option);
+    });
     return (
       <div id="projects" className="page">
-        <div
-          style={{ width: "100%", height: "10%", backgroundColor: "black" }}
-        ></div>
         <div id="project-screen">
           <div id="project-pane">
             <label
@@ -32,6 +43,7 @@ class Projects extends React.Component {
                 marginTop: "0.7rem",
                 fontSize: "1.8rem",
                 fontFamily: "'Ubuntu Mono', monospace",
+                userSelect: "none",
               }}
             >
               <span style={{ color: "red" }}>Select </span>
@@ -39,7 +51,37 @@ class Projects extends React.Component {
               <span style={{ color: "green" }}>From </span>
               <span style={{}}>Projects </span>
               <span style={{ color: "blue" }}>Where </span>
-              <span style={{}}>Project.Type</span> = [all, automation, front-end, back-end, full-stack]
+              <span style={{}}>Project.Type</span> = [
+              {OPTIONS.map((x, i) => {
+                let style = {"cursor": 'pointer'}
+                if (this.state.option === i){
+                  style = {...style, ...FILTERSTYLE}
+                }
+                if (i === OPTIONS.length - 1) {
+                  return (
+                    <label
+                      onClick={() => this.filterOptions(i)}
+                      style={style}
+                      key={i}
+                      index={i}
+                    >
+                      {x}
+                    </label>
+                  );
+                }
+                return (
+                  <label key={i} index={i}>
+                    <span
+                      onClick={() => this.filterOptions(i)}
+                      style={style}
+                    >
+                      {x}
+                    </span>
+                    ,{" "}
+                  </label>
+                );
+              })}
+              ]
             </label>
           </div>
           <div id="project-content">
@@ -49,13 +91,14 @@ class Projects extends React.Component {
                 fontStyle: "italic",
                 backgroundColor: "black",
                 color: "white",
-                padding: "2px"
+                padding: "2px",
+                userSelect: "none",
               }}
             >
               Psst: Hover over any project to view its details
             </label>
             <div id="project-content-list">
-              {GlobalVariables.PROJECTS.map((project, index) => {
+              {projects.map((project, index) => {
                 return (
                   <ProjectCard
                     project={project}
