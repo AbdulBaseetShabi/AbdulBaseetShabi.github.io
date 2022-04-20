@@ -3,6 +3,7 @@
   position: absolute;
   top: 2%;
   z-index: 500;
+  /* display: block; */
 }
 
 #nav-bar-content{
