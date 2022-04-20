@@ -1,3 +1,9 @@
+#about{
+  background-color: #FBDA61;
+  background-image: linear-gradient(225deg, #FBDA61 0%, #FF5ACD 100%);
+  /* https://cssgradient.io/gradient-backgrounds/ */
+}
+
 #about-me-body{
   top: 10%;
   width: 100%;
@@ -7,28 +13,16 @@
 
 #about-me-content{
   position: absolute;
-  top: 50%; left: 50%;
+  top: 45%; 
+  left: 50%;
   transform: translate(-50%,-50%);
   width: 100%;
-}
-
-.about-me-column{
-  float: left;
-}
-.about-me-column:first-child{
-  width: 40%;
-  box-sizing: border-box;
-  padding: 0 2px;
-}
-
-.about-me-column:last-child{
-  width: 60%;
 }
 
 #profile-picture-main-container {
   width: 100%;
   position: relative;
-  margin-top: 10%;
+  margin-top: 0.5%;
 }
 
 #profile-picture-sub-container {
