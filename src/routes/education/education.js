@@ -21,6 +21,10 @@ class Education extends React.Component {
 
   createDrawings(
     canvas,
+    sun,
+    mercury,
+    venus,
+    earth,
     stars,
     width,
     height,
@@ -28,7 +32,6 @@ class Education extends React.Component {
     venus_deg,
     mercury_deg
   ) {
-
     canvas.height = height;
     canvas.width = width;
 
@@ -38,23 +41,6 @@ class Education extends React.Component {
     context.globalCompositeOperation = "destination-over";
     context.clearRect(0, 0, width, height);
     context.beginPath();
-
-    // sun
-    let sun = new Image();
-    sun.src =
-      GlobalVariables.GOOGLE_DRIVE_PREFIX + "1WxUzCdN9qUNx1FU1MkhUudTb1o05gWp1";
-
-    //earth
-    let earth = new Image();
-    earth.src = GlobalVariables.GOOGLE_DRIVE_PREFIX + "1ABGBfqS5ubkX_6MXZm2Mb2UgGJMoXs0c";
-
-    //venus
-    let venus = new Image();
-    venus.src = GlobalVariables.GOOGLE_DRIVE_PREFIX + "14B6SFleuKI94s4FTbCM1Ak8pGUrdYYmh";
-
-    //mercury
-    let mercury = new Image();
-    mercury.src = GlobalVariables.GOOGLE_DRIVE_PREFIX + "1DLE3KFSXAV-P13ei3i3O5pnsDB90fru0";
 
     context.save();
     context.translate(width, height);
@@ -104,6 +90,10 @@ class Education extends React.Component {
     window.requestAnimationFrame(() => {
       this.createDrawings(
         canvas,
+        sun,
+        mercury,
+        venus,
+        earth,
         stars,
         width,
         height,
@@ -121,10 +111,34 @@ class Education extends React.Component {
       let page = document.getElementsByClassName("page")[0];
       let height = page.offsetHeight;
       let width = page.offsetWidth;
-  
+
+      // sun
+      let sun = new Image();
+      sun.src =
+        GlobalVariables.GOOGLE_DRIVE_PREFIX +
+        "1WxUzCdN9qUNx1FU1MkhUudTb1o05gWp1";
+
+      //earth
+      let earth = new Image();
+      earth.src =
+        GlobalVariables.GOOGLE_DRIVE_PREFIX +
+        "1ABGBfqS5ubkX_6MXZm2Mb2UgGJMoXs0c";
+
+      //venus
+      let venus = new Image();
+      venus.src =
+        GlobalVariables.GOOGLE_DRIVE_PREFIX +
+        "14B6SFleuKI94s4FTbCM1Ak8pGUrdYYmh";
+
+      //mercury
+      let mercury = new Image();
+      mercury.src =
+        GlobalVariables.GOOGLE_DRIVE_PREFIX +
+        "1DLE3KFSXAV-P13ei3i3O5pnsDB90fru0";
+
       //stars
       const STAR_COLORS = ["#a5f7e8", "#fffffe", "#E5ADAD", "#D377ED"];
-  
+
       let dots = 300;
       let x,
         y,
@@ -132,29 +146,41 @@ class Education extends React.Component {
         coordinate,
         star,
         radius = null;
-      let coordinates = [];
+      let coordinates = {}; //use hash maps -> TODO
       let stars = [];
-  
+
       for (let i = 0; i < dots; i++) {
         color = STAR_COLORS[i % STAR_COLORS.length];
         radius = Math.random() * 1.5 + 1;
         x = Math.floor(Math.random() * width + 1);
         y = Math.floor(Math.random() * height + 1);
-        coordinate = [x, y];
-  
-        while (coordinates.includes(coordinate)) {
+        coordinate = JSON.stringify([x, y]);
+
+        while (coordinate in coordinates) {
           x = Math.floor(Math.random() * width + 1);
           y = Math.floor(Math.random() * height + 1);
-          coordinate = [x, y];
+          coordinate = JSON.stringify([x, y]);
         }
-  
+
         star = [x, y, radius, color];
-        coordinates.push(coordinate);
+        coordinates[coordinate] = true;
         stars.push(star);
       }
-  
+
       window.requestAnimationFrame(() => {
-        this.createDrawings(canvas, stars, width, height, -90, -90, -90);
+        this.createDrawings(
+          canvas,
+          sun,
+          mercury,
+          venus,
+          earth,
+          stars,
+          width,
+          height,
+          -90,
+          -90,
+          -90
+        );
       });
     } else {
       console.log(
@@ -164,9 +190,7 @@ class Education extends React.Component {
   }
 
   componentDidMount() {
-    window.onload = () => {
-      this.drawOnCanvas();
-    };
+    this.drawOnCanvas();
   }
 
   componentWillUnmount() {
@@ -180,38 +204,6 @@ class Education extends React.Component {
   render() {
     return (
       <div className="page" id="education">
-        <img
-          style={{ display: "none" }}
-          src={
-            GlobalVariables.GOOGLE_DRIVE_PREFIX +
-            "1WxUzCdN9qUNx1FU1MkhUudTb1o05gWp1"
-          }
-          alt="sun"
-        />
-        <img
-          style={{ display: "none" }}
-          src={
-            GlobalVariables.GOOGLE_DRIVE_PREFIX +
-            "1ABGBfqS5ubkX_6MXZm2Mb2UgGJMoXs0c"
-          }
-          alt="earth"
-        />
-        <img
-          style={{ display: "none" }}
-          src={
-            GlobalVariables.GOOGLE_DRIVE_PREFIX +
-            "1DLE3KFSXAV-P13ei3i3O5pnsDB90fru0"
-          }
-          alt="mercury"
-        />
-        <img
-          style={{ display: "none" }}
-          src={
-            GlobalVariables.GOOGLE_DRIVE_PREFIX +
-            "14B6SFleuKI94s4FTbCM1Ak8pGUrdYYmh"
-          }
-          alt="venus"
-        />
         <canvas
           id="canvas-education"
           style={{
