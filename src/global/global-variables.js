@@ -1,7 +1,7 @@
 const GOOGLE_DRIVE_PREFIX = "https://drive.google.com/uc?export=view&id=";
 // const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
 
-//Descriptions 
+//Descriptions
 const DESCRIPTIONS = [
   "👋🏿 Hi, I am Abdul-Baseet Shabi",
   "🙂 Abdul for short",
@@ -14,7 +14,7 @@ const DESCRIPTIONS = [
   "💹 Unique value proposition: Experience in varying industries",
   "❤️ Hobbies: Cooking, Basketball, NFL playoffs",
   "🍕 Pineapple on Pizza: Yes",
-]
+];
 
 // Socials
 const SOCIALS = [
@@ -43,9 +43,7 @@ const SOCIALS = [
     src: "https://img.icons8.com/glyph-neue/64/FFFFFF/github.png",
     url: "https://github.com/AbdulBaseetShabi",
   },
-
 ];
-
 
 // Education
 const EDUCATION = {
@@ -98,7 +96,7 @@ const ACTIVITIES = [
     responsibilities: [],
     date_from: "May 2019",
     date_to: "Oct 2019",
-  }
+  },
 ];
 
 // Experiences
@@ -203,8 +201,8 @@ const PROJECTS = [
     name: "Web Resume",
     languages_and_frameworks: ["HTML", "CSS", "JavaScript", "React"],
     tools_and_technologies: ["Visual Studio", "Git"],
-    production_link: "https://abdulbaseetshabi.github.io/web-resume/",
-    source_code_link: "https://github.com/AbdulBaseetShabi/web-resume",
+    production_link: "https://abdulbaseetshabi.github.io/personal_website/",
+    source_code_link: "https://github.com/AbdulBaseetShabi/personal_website/",
     description:
       "This project is a web application that highlight my experiences. It gives people an insight into my roles and experiences, and what I gained from them.",
     image: "1bhhFCL67o7Nuij-qV5Ad5wDa2GVr0gZk",
@@ -215,7 +213,7 @@ const PROJECTS = [
     languages_and_frameworks: ["NodeJS", "Express", "MongoDB"],
     tools_and_technologies: ["Visual Studio", "Git"],
     production_link: "https://desolate-shelf-14448.herokuapp.com/",
-    source_code_link: "https://github.com/AbdulBaseetShabi/resume_backend",
+    source_code_link: "https://github.com/AbdulBaseetShabi/personal_website_API",
     description:
       "A REST API built on NodeJS and Express, that is used to update (via a mobile app) and get the content to display on my website",
     image: "1zs8eyFarmICVLZMtDRDv-gyyQTFTjTBa",
@@ -226,7 +224,7 @@ const PROJECTS = [
     languages_and_frameworks: ["Dart", "Flutter SDK"],
     tools_and_technologies: ["Visual Studio", "Git"],
     production_link: "",
-    source_code_link: "https://github.com/AbdulBaseetShabi/resume_updater",
+    source_code_link: "https://github.com/AbdulBaseetShabi/Mobile_Updater",
     description:
       "A mobile application built on Flutter SDK used to update the content on my website via the Web Resume REST API",
     image: "1uxtCTvYaUPKJky5vBasGDWHCML9zJWGw",
