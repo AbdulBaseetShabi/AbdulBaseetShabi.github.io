@@ -13,11 +13,11 @@ function App (props) {
       <Router>
         <NavigationBar/>
         <Routes>         
-          <Route exact path="/about" element={<AboutMe  />}/>
-          <Route exact path="/education" element={<Education  />}/>
-          <Route exact path="/experience" element={<Experience  />}/>
-          <Route exact path="/projects" element={<Projects  />}/>
-          <Route exact path="*" element={<AboutMe  />}/>
+          <Route exact path="/personal_website/about" element={<AboutMe  />}/>
+          <Route exact path="/personal_website/education" element={<Education  />}/>
+          <Route exact path="/personal_website/experience" element={<Experience  />}/>
+          <Route exact path="/personal_website/projects" element={<Projects  />}/>
+          <Route exact path="/personal_website/*" element={<AboutMe  />}/>
          </Routes>
       </Router>
     );

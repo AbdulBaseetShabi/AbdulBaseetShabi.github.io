@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./navigationbar.css";
 
 const ROUTES = [
-  { name: "about me", route: "/about" },
-  { name: "education", route: "/education" },
-  { name: "experiences", route: "/experience" },
-  { name: "projects", route: "/projects" },
+  { name: "about me", route: "/personal_website/about" },
+  { name: "education", route: "/personal_website/education" },
+  { name: "experiences", route: "/personal_website/experience" },
+  { name: "projects", route: "/personal_website/projects" },
 ];
 
 const LINK_STYLE = {
