@@ -41,7 +41,7 @@ class ProjectCard extends React.Component {
         ></div>
         <div
           className="project-card-description enter-bottom"
-          onMouseLeave={(e) => this.toggleDetail(e, false)}
+          // onMouseLeave={(e) => this.toggleDetail(e, false)}
         >
           <label
             className="inline-block-label"
