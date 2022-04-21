@@ -1,32 +1,32 @@
-#navigation-bar{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    padding: 12px 0;
-    z-index: 999;
+#nav-bar{
+  width:100%;
+  position: absolute;
+  top: 2%;
+  z-index: 500;
+  /* display: block; */
 }
 
-.navigation-item{
-    padding: 5px;
-    margin: auto;
-    text-align: center;
-}
-.navigation-item:hover{
-    border-bottom: 3px solid;
-    cursor: pointer;
+#nav-bar-content{
+  width:40%;
+  margin: 0 auto;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navigation-item > label{
-    cursor: pointer;
+.nav-bar-link label{
+  width:100%;
+  text-transform: capitalize;
 }
 
-a{
-    color: inherit;
-    text-decoration: none;
+.nav-bar-link:hover, .nav-bar-link label:hover{
+  cursor: pointer;
 }
 
-.fa-adjust:hover{
-    cursor: pointer;
+.nav-bar-link:hover{
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }

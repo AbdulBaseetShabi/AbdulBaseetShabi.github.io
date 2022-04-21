@@ -1,31 +1,50 @@
-#profile-picture-sub-container {
-  opacity: 0.6;
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  margin: auto;
+#about{
+  background-color: #FBDA61;
+  background-image: linear-gradient(225deg, #FBDA61 0%, #FF5ACD 100%);
+  /* https://cssgradient.io/gradient-backgrounds/ */
+  position: absolute;
+  top: 0;
+}
+
+#about-me-body{
+  /* top: 10%; */
+  width: 100%;
+  /* height: calc( 100% - 40px );
+  position: relative; */
+}
+
+#about-me-content{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
 }
 
 #profile-picture-main-container {
+  width: 100%;
   position: relative;
+  margin-top: 0.5%;
+}
+
+#profile-picture-sub-container {
+  height: 14rem;
+  width: 14rem;
+  border-radius: 7rem;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }
 
 #profile-picture {
   position: absolute;
   top: 0.6rem;
-  left: calc(50% - 90px); /* 50% minus half the div width */
-  height: 180px;
-  width: 180px;
-  border-radius: 100px;
-}
-
-#socials-container {
-  position: absolute;
-  top: calc(50% - 144px);
-  left: 1.3rem;
-}
-
-#custom-button-container {
-  text-align: center;
-  margin-top: 2rem;
+  left: calc(50% - (13rem / 2)); /* 50% minus half the div width */
+  height: 13rem;
+  width: 13rem;
+  border-radius: 7.8rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

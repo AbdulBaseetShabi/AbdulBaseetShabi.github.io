@@ -1,89 +1,53 @@
-import "./aboutme.css";
-import CustomButton from "../../widget/button/custombutton";
+// import GlobalVariables from "../../global/global-variables";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
+import GlobalVariables from "../../global/global-variables"
 import Socials from "../../widget/socials/socials";
-import GlobalFunctions from "../../global/global-functions";
-import GlobalVariables from "../../global/global-variables";
+import "./aboutme.css";
 
-function AboutMe(props) {
-  let resume_link =
-    "https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf";
-  let backgroud = props.isDarkMode
-    ? "1TxWFnb7fcauid0i-_SOZzPLopmV9PdA9"
-    : "1ZhiZk7ZRtTtt6kK8qYybQiLAq8Daoapp";
-  let profilepicture = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
+function Body() {
   return (
-    <div
-      className="page"
-      id="aboutme"
-      style={{
-        backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${backgroud})`,
-      }}
-    >
-      <div id="profile-picture-main-container">
-        <div
-          id="profile-picture-sub-container"
-          style={{
-            backgroundColor: "#fffffe",
-          }}
-        ></div>
-        <div
-          id="profile-picture"
-          style={{
-            backgroundImage: `url(${GlobalVariables.GOOGLE_DRIVE_PREFIX}${profilepicture})`,
-          }}
-        ></div>
-      </div>
-      <div style={{ margin: "3.5rem auto" }} className="show-bottom-console">
+    <div id="about-me-body">
+      <div id="about-me-content">
         <AnimatedConsole
-          width="30%"
-          prefixText="$ "
-          suffixText="|"
-          backgroundColor={props.isDarkMode ? "#16161A" : "#fffffe"}
-          texts={[
-            "Welcome to $My Website$",
-            "$NOTE:$it is still under development",
-            "My name is$Abdul-Baseet Shabi",
-            "$Too long?$Feel free to call me$Abdul$",
-            "This website is $custom made$with a little help from StackOverflow",
-            "Notice an $ERROR?$Please let me know",
-            "You can reach me on any$platforms$to the$left of your screen",
-          ]}
-          textChangeInterval={1200}
-          typingSpeed={50}
-          generalStyle={{
-            fontWeight: "bold",
+          commandPrefix={
+            <label style={{ color: "#21CB8B", fontWeight: "bolder" }}>
+              abdul@Abdul
+              <span style={{ color: "#FFFFFF" }}>:</span>
+              <label style={{ color: "#3B8EEA" }}>/user/value</label>
+            </label>
+          }
+          suffixText="*"
+          texts={GlobalVariables.DESCRIPTIONS}
+          command={" $ cat abdul_summary.txt"}
+          commandTypingSpeed={50}
+          backgroundColor={"black"}
+          textChangeInterval={1500}
+          typingSpeed={10}
+          typingStyle={{
+            fontSize: "1rem",
+            textAlign: "initial",
+            // paddingTop: "0.5rem",
+            color: "#FFFFFE",
+            fontFamily: "'Ubuntu Mono', monospace",
             width: "100%",
-            fontSize: "5rem",
-            textAlign: "center",
-            paddingTop: "0.5rem",
             opacity: "0.95",
           }}
           specialCharaterStyle={{
-            color: props.isDarkMode ? "#BB6BD9" : "#0e172c",
+            color: "#BB6BD9",
             fontWeight: "Bold",
           }}
-        />
+        >
+          <Socials />
+        </AnimatedConsole>
       </div>
+    </div>
+  );
+}
 
-      <div id="custom-button-container">
-        <CustomButton
-          backgroundColor={props.isDarkMode ? "#7f5af0" : "#fffffe"}
-          text="View Resume"
-          onClick={() => {
-            GlobalFunctions.openLinkInNewTab(
-              `https://docs.google.com/viewer?url=${resume_link}`
-            );
-          }}
-        />
-      </div>
-      <div id="socials-container">
-        <Socials
-          orientation="horizontal"
-          animate={true}
-          isDarkMode={props.isDarkMode}
-        />
-      </div>
+function AboutMe(props) {
+  return (
+    <div id="about" className="page">
+      <Body />
     </div>
   );
 }

@@ -1,19 +1,15 @@
-#custom-button:hover{
-    cursor: pointer;
-}
-
-#custom-button{
-    text-transform: uppercase;
+.custom-button{
+    text-align: center;
     padding: 10px 50px;
-    display: inline-block;
     margin: 0 auto;
     font-size: 1rem;
-    font-weight: bold;
-    width: 30%;
-    opacity: 0.6;
+    border-radius: 3rem;
+    width: 90%;
+    opacity: 0.9;
     box-sizing: border-box;
 }
 
-#custom-button:hover{
-    opacity: 0.89;
+.custom-button:hover{
+    opacity: 1;
+    cursor: pointer;
 }

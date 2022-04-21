@@ -1,16 +1,45 @@
-.social {
-  margin: 2rem 0;
-  width: fit-content;
-  align-items: center;
+#socials-container{
   display: flex;
+  align-items: center;
+  margin: 0.5rem auto 0;
+  justify-content: "center",
 }
 
-.social > i {
+.social {
+  margin: auto;
+  align-items: center;
+  display: block;
+}
+
+@keyframes moveup {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -20px;
+  }
+}
+
+/* .social .icon:hover{
+  position: relative;
+  animation: moveup 200ms ease 1 normal forwards;
+} */
+
+.icon{
+  margin: 0 auto;
+  display: block;
   cursor: pointer;
 }
 
 .tooltip {
-  opacity: 0.8;
-  padding: 7px;
+  opacity: 0.9;
+  padding: 3px;
   visibility: hidden;
+  background-color: black;
+  color: white;
+  display: block;
+  text-align: center;
+  position: relative;
+  bottom: 0;
 }

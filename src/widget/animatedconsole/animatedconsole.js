@@ -1,184 +1,198 @@
 import React from "react";
 import "./animatedconsole.css";
 
+const CONSOLE_STYLE = {
+  minHeight: "60vh",
+  height: "75vh",
+  width: "50%",
+  lineHeight: "2rem",
+  margin: "auto",
+  padding: "0.5rem",
+  userSelect: "none",
+  textAlign: "center",
+  backgroundColor: "black",
+  boxShadow: "10px 9px 0px 0px #6a6767"
+};
+
+const BUTTONS = ["red", "yellow", "green"];
+
 class AnimatedConsole extends React.Component {
   constructor(props) {
     super(props);
-    this.parsedText = null;
     this.state = {
-      stop: 0,
-      index: 0,
+      stop_index_with_text: 0,
+      current_index_text_array: 0,
+      stop_index_command: 0,
+      command_done: false,
+      all_command_done: false,
     };
-    this.textInterval = null;
-    this.waitPeriod = null;
-    this.prefixText = this.props.prefixText;
+    this.texts = this.props.texts;
     this.suffixText = this.props.suffixText;
-    this.stopInterval = false;
+    this.waitPeriod = null;
+    this.textInterval = null;
+    this.commandInterval = null;
     this.alreadyCalled = false;
   }
 
   pauseInterval() {
-    if (!this.alreadyCalled) {
-      this.alreadyCalled = true;
-      this.stopInterval = true;
-      this.waitPeriod = setTimeout(() => {
-        this.stopInterval = false;
-      }, this.props.textChangeInterval);
-    }
-  }
-
-  parseText(text) {
-    let text_array = text;
-    if (!Array.isArray(text)) {
-      text_array = [].push(text);
-    }
-
-    let response = [];
-
-    for (const current_text of text_array) {
-      let index_array = [];
-      let previous_value;
-
-      for (let i = 0; i < current_text.length; i++) {
-        previous_value = index_array[index_array.length - 1];
-
-        if (i === current_text.length - 1) {
-          index_array[index_array.length - 1].end = i + 1;
-        } else if (current_text[i] === "$") {
-          if (index_array.length === 0) {
-            index_array.push({ start: i, end: -1, is_special: true });
-          } else {
-            index_array[index_array.length - 1].end = i;
-            index_array.push({
-              start: i,
-              end: -1,
-              is_special: !previous_value.is_special,
-            });
-          }
-        } else if (i === 0) {
-          index_array.push({ start: i, end: -1, is_special: false });
-        }
-      }
-
-      response.push({
-        text: current_text.replaceAll("$", " ").trim(),
-        parsedIndex: JSON.parse(JSON.stringify(index_array)),
-      });
-    }
-
-    return response;
+    this.waitPeriod = setTimeout(() => {}, this.props.textChangeInterval);
   }
 
   componentDidMount() {
-    this.parsedText = this.parseText(this.props.texts);
-    this.textInterval = setInterval(() => {
-      if (
-        this.state.stop === this.parsedText[this.state.index].text.length - 1 &&
-        !this.alreadyCalled
-      ) {
-        this.pauseInterval();
-      }
+    this.commandInterval = setInterval(() => {
+      //set the command interval
+      this.setState((prevState, prevProps) => {
+        if (prevState.stop_index_command === this.props.command.length) {
+          //once the command has stopped typing
+          clearInterval(this.commandInterval); //clear it
+          this.commandInterval = null;
+          clearTimeout(this.waitPeriod);
+          this.waitPeriod = null;
+          this.textInterval = setInterval(() => {
+            //satrt the text interval
+            this.setState((prevState, prevProps) => {
+              if (
+                prevState.stop_index_with_text ===
+                this.texts[prevState.current_index_text_array].length
+              ) {
+                //once the text is done
+                if (
+                  prevState.current_index_text_array ===
+                  this.texts.length - 1
+                ) {
+                  //check if it is the last one
+                  clearInterval(this.textInterval); //clear the time interval
+                  this.textInterval = null;
+                  return {
+                    all_command_done: true,
+                  };
+                } else {
+                  return {
+                    stop_index_with_text: 0,
+                    current_index_text_array:
+                      (prevState.current_index_text_array + 1) %
+                      this.texts.length,
+                  };
+                }
+              }
 
-      if (!this.stopInterval) {
-        this.alreadyCalled = false;
-        this.setState((prevState, prevProps) => {
-          let end_of_text =
-            prevState.stop === this.parsedText[prevState.index].text.length;
-          if (!end_of_text) {
-            return {
-              stop: prevState.stop + 1,
-            };
-          } else {
-            return {
-              stop: 0,
-              index: (prevState.index + 1) % this.parsedText.length,
-            };
-          }
-        });
-      }
-    }, this.props.typingSpeed);
+              return {
+                stop_index_with_text: prevState.stop_index_with_text + 1,
+              };
+            });
+          }, this.props.typingSpeed);
+          return {
+            command_done: true,
+          };
+        }
+
+        return {
+          stop_index_command: prevState.stop_index_command + 1,
+        };
+      });
+    }, this.props.commandTypingSpeed);
   }
 
   componentWillUnmount() {
     clearInterval(this.textInterval);
+    this.textInterval = null;
+    clearInterval(this.commandInterval);
+    this.commandInterval = null;
     clearTimeout(this.waitPeriod);
+    this.waitPeriod = null;
   }
 
   render() {
-    let text = this.parseText(this.props.texts);
-
-    let current_text = text[this.state.index];
-    let display_text = current_text;
-    let stop = this.state.stop;
-    display_text.parsedIndex = display_text.parsedIndex.filter((index) => {
-      return index.start <= stop;
-    });
-    display_text.parsedIndex[display_text.parsedIndex.length - 1].end =
-      stop + 1;
+    let current_index_text_array = this.state.current_index_text_array;
+    let style = {
+      ...CONSOLE_STYLE,
+      ...{
+        // width: this.props.width,
+        backgroundColor: this.props.backgroundColor ?? "transparent",
+      },
+    };
 
     return (
-      <div
-        style={{
-          width: this.props.width,
-          minHeight: "10rem",
-          backgroundColor: this.props.backgroundColor,
-          margin: "0 auto",
-          padding: "0.5rem",
-          border: "5px inset black",
-          userSelect: "none",
-        }}
-      >
-        {text.map((data, index) => {
-          if (index < this.state.index  ) {
-            return (
-              <div key={index} className="code-line">
-                <label style={{fontSize: "bold"}}>{this.prefixText}</label>
-                {data.parsedIndex.map((special_index, index) => {
-                  return (
+      <div style={style} className="enter-right">
+        <div id="console-header">
+          <div id="console-button-container">
+            {BUTTONS.map((button, index) => {
+              return (
+                <div
+                  className="circle"
+                  key={index}
+                  style={{ backgroundColor: button }}
+                >
+                </div>
+              );
+            })}
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              fontWeight: "bolder",
+              fontSize: "1.5rem",
+              width: "100%",
+              height: "30px",
+            }}
+          >
+          </div>
+        </div>
+        <div id="console-data" style={this.props.typingStyle}>
+          <div id="console-defaults">
+            <label >
+              {this.props.commandPrefix}
+              {
+                <label>
+                  <label>
+                    {this.props.command.substring(
+                      0,
+                      this.state.stop_index_command + 1
+                    )}
+                  </label>
+                  {this.state.command_done ? null : (
                     <label
-                      key={index}
-                      style={
-                        special_index.is_special
-                          ? this.props.specialCharaterStyle
-                          : {}
-                      }
+                      id="suffix-text"
+                      style={{ fontSize: this.props.typingStyle.fontSize }}
                     >
-                      {data.text.slice(
-                        special_index.start,
-                        special_index.end
-                      )}
+                      {this.suffixText}
                     </label>
-                  );
-                })}
-              </div>
-            );
-          } else if (this.state.index === index) {
-            return (
-              <div className="code-line" key={index}>
-                <label style={{fontSize: "bold"}}>{this.prefixText}</label>
-                {display_text.parsedIndex.map((special_index, index) => {
+                  )}
+                </label>
+              }
+            </label>
+          </div>
+          {this.state.command_done ? (
+            <div id="cat-data">
+              {this.texts.map((text, index) => {
+                if (index < current_index_text_array) {
                   return (
-                    <label
-                      key={index}
-                      style={
-                        special_index.is_special
-                          ? this.props.specialCharaterStyle
-                          : {}
-                      }
-                    >
-                      {display_text.text.slice(
-                        special_index.start,
-                        special_index.end
-                      )}
-                    </label>
+                    <div className="code-line" key={index}>
+                      <label key={index}>{text}</label>
+                    </div>
                   );
-                })}
-                <label id="suffix-text">{this.suffixText}</label>
-              </div>
-            );
-          }
-          return null;
-        })}
+                } else if (index === current_index_text_array) {
+                  return (
+                    <div className="code-line" key={index}>
+                      <label key={index}>
+                        {text.substring(0, this.state.stop_index_with_text + 1)}
+                      </label>
+                      <label
+                        id="suffix-text"
+                        style={{ fontSize: this.props.typingStyle.fontSize }}
+                      >
+                        {this.suffixText}
+                      </label>
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
+            </div>
+          ) : null}
+          {this.state.all_command_done ? <div><label>{this.props.commandPrefix} $ cat socials.txt</label><div>{this.props.children}</div></div> : null}
+        </div>
       </div>
     );
   }

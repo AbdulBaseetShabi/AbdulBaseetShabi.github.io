@@ -3,7 +3,7 @@ import './custombutton.css'
 function CustomButton(props) {
   return (
     <div
-      id="custom-button"
+      className="custom-button"
       style={{ backgroundColor: props.backgroundColor, userSelect: "none"}}
       onClick={props.onClick}
     >

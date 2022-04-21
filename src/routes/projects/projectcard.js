@@ -1,95 +1,105 @@
 import React from "react";
 
-import GlobalFuntions from "../../global/global-functions.js";
 import GlobalVariables from "../../global/global-variables.js";
-import CustomButton from "./custombutton.js";
+import GlobalFuntions from "../../global/global-functions.js";
+
+import CustomButton from "../../widget/button/custombutton.js";
 
 class ProjectCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      show_details: false,
-    };
-    this.url = this.props.details.image;
-    this.position = this.props.position;
-    this.details = this.props.details;
+    this.toggleDetail = this.toggleDetail.bind(this);
   }
 
-  showDetail(e) {
-    e.target.nextElementSibling.classList.add("show-bottom");
-    e.target.nextElementSibling.style.display = "block";
-    GlobalFuntions.closeProjects(this.position);
+  toggleDetail(e, show) {
+    let target = e.target;
+
+    if (show && target.classList.contains("project-image")) {
+      target.nextElementSibling.style.display = "block";
+    } else if (!show && target.classList.contains("project-card-description")) {
+      target.style.display = "none";
+    }
   }
 
   render() {
+    let project = this.props.project;
+    let show_prod = project.production_link !== undefined &&
+    project.production_link.length !== 0
     return (
-      <div position={this.position} className="project">
-        <img
-          className="project-image"
-          src={GlobalVariables.GOOGLE_DRIVE_PREFIX + this.url}
-          alt="project"
-          height="250px"
-          onMouseEnter={(e) => this.showDetail(e)}
-          onClick = {(e) => GlobalFuntions.openLinkInNewTab(this.details.source_code_link)}
-        ></img>
+      <div
+        className="project-card enter-bottom"
+        style={{ width: this.props.width }}
+      >
         <div
+          className="project-image"
           style={{
-            backgroundColor: this.props.backgroundColor,
+            backgroundImage: `url(${
+              GlobalVariables.GOOGLE_DRIVE_PREFIX + project.image
+            })`,
           }}
-          className="project-detail"
+          onMouseEnter={(e) => this.toggleDetail(e, true)}
+        ></div>
+        <div
+          className="project-card-description enter-bottom"
+          // onMouseLeave={(e) => this.toggleDetail(e, false)}
         >
-          <div style={{ position: "relative", height: "inherit" }}>
-            <label className="inline-block-label project-name">
-              {this.details.name}
-            </label>
-            <hr style={{ width: "80%" }} />
-
-            <p style={{ padding: "0 0.5rem" }}>{this.details.description}</p>
-            <div
-              className="container-languages-tools"
-            >
-              <label
-                className="inline-block-label-uncentered"
-                style={{
-                  margin: "0.5rem",
+          <label
+            className="inline-block-label"
+            style={{ fontWeight: "bolder" }}
+          >
+            {project.name}
+          </label>
+          <label className="inline-block-label">{project.description}</label>
+          <hr />
+          <label className="inline-block-label-uncentered">
+            <span style={{ fontWeight: "bolder" }}>Stack: </span>
+            <span>
+              {project.languages_and_frameworks.map((x, i) => {
+                if (i !== project.languages_and_frameworks.length - 1) {
+                  return ` ${x} |`;
+                }
+                return ` ${x}`;
+              })}
+            </span>
+          </label>
+          <label className="inline-block-label-uncentered">
+            <span style={{ fontWeight: "bolder" }}>Technologies: </span>
+            <span>
+              {project.tools_and_technologies.map((x, i) => {
+                if (i !== project.tools_and_technologies.length - 1) {
+                  return ` ${x} |`;
+                }
+                return ` ${x}`;
+              })}
+            </span>
+          </label>
+          <div
+            style={{
+              color: "white",
+              position: "absolute",
+              bottom: "5px",
+              width: "100%",
+              left: "0",
+            }}
+          >
+            <div style={{width: show_prod ? "50%" : "100%", float: "left"}}>
+              <CustomButton
+                text="Code"
+                backgroundColor="#3B8EEA"
+                onClick={() => {
+                  GlobalFuntions.openLinkInNewTab(project.source_code_link);
                 }}
-              >
-                <span style={{ fontWeight: "bold" }}>
-                  Langauges and Frameworks:{" "}
-                </span>
-                {this.details.languages_and_frameworks.join(", ")}
-              </label>
-              <label
-                className="inline-block-label-uncentered"
-                style={{
-                  margin: "0.5rem",
-                }}
-              >
-                <span style={{ fontWeight: "bold" }}>
-                  Tools and Technologies:{" "}
-                </span>
-                {this.details.tools_and_technologies.join(", ")}
-              </label>
-              <div
-                className="container-custom-button"
-              >
+              />
+            </div>
+            <div style={{width: "50%", float: "left"}}>
+              {show_prod ? (
                 <CustomButton
-                  link={this.details.source_code_link}
-                  text="Source Code"
-                  noOfButtons={
-                    this.details.production_link.length !== 0 ? 2 : 1
-                  }
-                  backgroundColor = {this.props.buttonColor}
+                  text="Live"
+                  onClick={() => {
+                    GlobalFuntions.openLinkInNewTab(project.production_link);
+                  }}
                 />
-                {this.details.production_link.length !== 0 ? (
-                  <CustomButton
-                    link={this.details.production_link}
-                    text="Production"
-                    noOfButtons={2}
-                    backgroundColor = {this.props.buttonColor}
-                  />
-                ) : null}
-              </div>
+              ) : null}
             </div>
           </div>
         </div>
