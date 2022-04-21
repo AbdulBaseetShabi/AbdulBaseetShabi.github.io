@@ -59,7 +59,7 @@ class Experience extends React.Component {
 
             { this.state.showSocials ? <Socials /> : null }
           </div>
-          <div className="experience-column">
+          <div className="experience-column enter-left">
             <label className="inline-block-label experience-title">
               Coop Experience
             </label>
@@ -69,7 +69,7 @@ class Experience extends React.Component {
               );
             })}
           </div>
-          <div className="experience-column">
+          <div className="experience-column enter-left">
             <label className="inline-block-label experience-title">
               Part Time Experience
             </label>

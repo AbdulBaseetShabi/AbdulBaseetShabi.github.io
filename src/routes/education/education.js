@@ -218,7 +218,7 @@ class Education extends React.Component {
           }}
         >
           <div
-            className="page"
+            className="page enter-left"
             style={{
               display: "flex",
               flexWrap: "wrap",

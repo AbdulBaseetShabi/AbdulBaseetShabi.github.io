@@ -107,13 +107,12 @@ class AnimatedConsole extends React.Component {
     let style = {
       ...CONSOLE_STYLE,
       ...{
-        // width: this.props.width,
         backgroundColor: this.props.backgroundColor ?? "transparent",
       },
     };
 
     return (
-      <div style={style} className="enter-right">
+      <div style={style} className="enter-left">
         <div id="console-header">
           <div id="console-button-container">
             {BUTTONS.map((button, index) => {

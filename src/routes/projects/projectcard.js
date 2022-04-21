@@ -27,7 +27,7 @@ class ProjectCard extends React.Component {
     project.production_link.length !== 0
     return (
       <div
-        className="project-card enter-bottom"
+        className="project-card enter-left"
         style={{ width: this.props.width }}
       >
         <div
