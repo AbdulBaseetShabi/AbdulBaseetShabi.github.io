@@ -33,7 +33,7 @@ function Body() {
           commandTypingSpeed={50}
           backgroundColor={"black"}
           textChangeInterval={1500}
-          typingSpeed={20}
+          typingSpeed={10}
           typingStyle={{
             fontSize: "1rem",
             textAlign: "initial",
