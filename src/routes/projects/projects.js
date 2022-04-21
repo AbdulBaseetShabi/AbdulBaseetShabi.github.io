@@ -36,6 +36,12 @@ class Projects extends React.Component {
 
   filterOptions(option) {
     this.setState({ option: option });
+
+    // prevent toggle of untoggled project descriptions
+    let project_description = document.getElementsByClassName('project-card-description');
+    for (let i = 0; i < project_description.length; i++) {
+      project_description[i].style.display = "none"
+    }
   }
 
   render() {
