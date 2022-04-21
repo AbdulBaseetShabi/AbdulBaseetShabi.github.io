@@ -1,3 +1,6 @@
+const API_PREFIX = "https://desolate-shelf-14448.herokuapp.com/getData";
+// const API_PREFIX = "http://localhost:5000/getData";
+
 function openLinkInNewTab(link) {
   window.open(link, "_blank");
 }
@@ -25,14 +28,31 @@ function closeProjects(exception) {
   }
 }
 
-function scrollToElement(id){
+function scrollToElement(id) {
   const element = document.getElementById(id);
   element.scrollIntoView();
+}
+
+function getDataFromAPI(db, callback) {
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.onreadystatechange = function () {
+    if (xmlHttp.readyState === 4) {
+      if (xmlHttp.status === 200) {
+        callback(JSON.parse(xmlHttp.responseText));
+      } else {
+        callback(null);
+      }
+    }
+  };
+
+  xmlHttp.open("POST", `${API_PREFIX}?db=${db}`, true); // true for asynchronous
+  xmlHttp.send(null);
 }
 
 module.exports = {
   openLinkInNewTab,
   isElementInViewport,
   closeProjects,
-  scrollToElement
+  getDataFromAPI,
+  scrollToElement,
 };
