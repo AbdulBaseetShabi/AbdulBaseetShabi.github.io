@@ -2,14 +2,16 @@ import React from "react";
 import "./animatedconsole.css";
 
 const CONSOLE_STYLE = {
-  height: "60vh",
-  maxWidth: "55vw",
+  minHeight: "60vh",
+  height: "75vh",
+  width: "50%",
   lineHeight: "2rem",
   margin: "auto",
   padding: "0.5rem",
   userSelect: "none",
   textAlign: "center",
   backgroundColor: "black",
+  boxShadow: "10px 9px 0px 0px #6a6767"
 };
 
 const BUTTONS = ["red", "yellow", "green"];
@@ -22,6 +24,7 @@ class AnimatedConsole extends React.Component {
       current_index_text_array: 0,
       stop_index_command: 0,
       command_done: false,
+      all_command_done: false,
     };
     this.texts = this.props.texts;
     this.suffixText = this.props.suffixText;
@@ -60,7 +63,9 @@ class AnimatedConsole extends React.Component {
                   //check if it is the last one
                   clearInterval(this.textInterval); //clear the time interval
                   this.textInterval = null;
-                  return null;
+                  return {
+                    all_command_done: true,
+                  };
                 } else {
                   return {
                     stop_index_with_text: 0,
@@ -102,13 +107,13 @@ class AnimatedConsole extends React.Component {
     let style = {
       ...CONSOLE_STYLE,
       ...{
-        width: this.props.width,
+        // width: this.props.width,
         backgroundColor: this.props.backgroundColor ?? "transparent",
       },
     };
 
     return (
-      <div style={style}>
+      <div style={style} className="enter-right">
         <div id="console-header">
           <div id="console-button-container">
             {BUTTONS.map((button, index) => {
@@ -186,6 +191,7 @@ class AnimatedConsole extends React.Component {
               })}
             </div>
           ) : null}
+          {this.state.all_command_done ? <div><label>{this.props.commandPrefix} $ cat socials.txt</label><div>{this.props.children}</div></div> : null}
         </div>
       </div>
     );
