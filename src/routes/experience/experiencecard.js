@@ -8,7 +8,7 @@ const CARD_COLOR = {
 function ExperienceCard(props) {
   let exeprience = props.experience;
   return (
-    <div className="experience-card" style={{backgroundColor: `${CARD_COLOR[props.type]}`}}>
+    <div className="experience-card" style={{borderLeft: `5px solid ${CARD_COLOR[props.type]}`}}>
       <label className="inline-block-label">{exeprience.title} </label>
       <label className="inline-block-label"> {exeprience.company} </label>
       <label className="inline-block-label">{exeprience.location}</label>
