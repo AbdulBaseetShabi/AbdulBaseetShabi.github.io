@@ -41,7 +41,7 @@ class Projects extends React.Component {
               className="inline-block-label"
               style={{
                 marginTop: "0.7rem",
-                fontSize: "1.8rem",
+                fontSize: "1.6rem",
                 fontFamily: "'Ubuntu Mono', monospace",
                 userSelect: "none",
               }}
