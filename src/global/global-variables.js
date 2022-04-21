@@ -1,71 +1,118 @@
 const GOOGLE_DRIVE_PREFIX = "https://drive.google.com/uc?export=view&id=";
 // const PROFILE_PICTURE = "1-Rn49ksl9N2nRLT1yKeRzWba0Fa8070J";
+
+//Descriptions 
+const DESCRIPTIONS = [
+  "👋🏿 Hi, I am Abdul-Baseet Shabi",
+  "🙂 Abdul for short",
+  "⭐ Welcome to my personal website ⭐",
+  "🏗️ It was built from scratch on React",
+  "👨‍💻 Full-Stack Developer",
+  "🤖 Technological Euthasits",
+  "📚 Favorite stack: MERN (MongoDB + Express + React + NodeJs)",
+  "🤳🏿 Favourite language: Tie between JavaScript and Python",
+  "💹 Unique value proposition: Experience in varying industries",
+  "❤️ Hobbies: Cooking, Basketball, NFL playoffs",
+  "🍕 Pineapple on Pizza: Yes",
+]
+
+// Socials
+const SOCIALS = [
+  {
+    name: "Resume",
+    url: "https://docs.google.com/viewer?url=https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf",
+    src: "https://img.icons8.com/plasticine/60/000000/file.png",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/abdulbaseet/",
+    src: "https://img.icons8.com/fluency/60/000000/linkedin.png",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/bsquare480/",
+    src: "https://img.icons8.com/fluency/60/000000/instagram-new.png",
+  },
+  {
+    name: "Email",
+    url: "mailto:shab7430@mylaurier.ca",
+    src: "https://img.icons8.com/fluency/60/000000/email-open.png",
+  },
+  {
+    name: "GitHub",
+    src: "https://img.icons8.com/glyph-neue/64/FFFFFF/github.png",
+    url: "https://github.com/AbdulBaseetShabi",
+  },
+
+];
+
+
 // Education
 const EDUCATION = {
-    school: "Wilfrid Laurier University",
-    program: "Business Administration & Computer Science",
-    from: "September 2017",
-    to: "August 2022 (Expected)",
+  school: "Wilfrid Laurier University",
+  program: "Business Administration & Computer Science",
+  from: "September 2017",
+  to: "August 2022 (Expected)",
 };
 
 const ACTIVITIES = [
   {
     title: "President",
     company: "Laurier Computing Society",
-    reflection: [
-      "If I had to pick, this would be my favourite experience. It was the first time I had a leadership role aside from being the eldest child. It put me in a position where I was the key decision-maker. My decisions had a direct impact on the success or the failure of the club.",
-      "This role spans over three semesters, two of which are active club seasons. In this role, I had learning experiences during the club's first active semester. Some decisions were made that could have been better. But overall, the experience improved my creative and problem-solving skillset, which resulted in a multitude of successful events.",
-    ],
-    responsibilities: [
-      'fly'
-    ],
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
+    responsibilities: [],
     date_from: "Aug 2020",
-    date_to: "March 2022"
+    date_to: "March 2022",
   },
-  
-  {
-    name: "Global Engagement Student Ambassador - Laurier International",
-    reflection: [
-      "I understand the importance of support, especially when leaving your environment to a foreign environment. I reflect on being 16 in my first year in university, after being in Toronto for a year, I felt so lost like a needle in a haystack. There was so much going on and no sense of direction on what to do. This is why I am proud of this role. I was given the opportunity to help students in a similar situation, who are coming or going on the student exchange program.",
-    ],
-  },
-  {
-    name: "Peer Mentor/Tutor - Mathematics and Statistics Support",
-    reflection: [
-      "It is important to give back to your community or a source that helped you get to where you currently are. This resource was that to me. In my first year, I used it a lot to better understand concepts taught in class. I had the opportunity to meet upper-year students and get valuable advice. When I became an upper-year student ('old'), I felt the need to give back. Hence, my involvement with this role.",
-    ],
-  },
-  {
-    name: "Instructional Assistant - Computer Science department",
-    reflection: [],
-  },
-  {
-    name: "Headstart Ambassador - Teaching and Learning",
-    reflection: [
-      "As a headstart ambassador, my role officially is to ease the transition of students into the university lifestyle. Upon reflection, my role unofficially expands to their parents. I am reminded of how much love parents have for their kids. I see parents asking more questions, being more worried than their kids, and honestly, in need of the service more than the students. This is why sometimes I take it upon myself to cater to the needs of the parents.",
-      "This role taught me how to be more compassionate, patient and understanding, that sometimes you should be open to doing a little bit more. The worst that could happen is you learn or experience something new."
-    ],
-  },
-  { name: "Icebreaker - Student Union", reflection: [] },
-  { name: "GoTeam - Student Union", reflection: [] },
 
   {
-    name: "Proctor/Marker - Mathematics Department",
-    reflection: [],
+    title: "Global Engagement Student Ambassador",
+    company: "Laurier International",
+    responsibilities: [],
+    date_from: "June 2018",
+    date_to: "April 2019",
   },
-  { name: "WebMaster - Laurier Data Science Society", reflection: [] },
+  {
+    title: "Icebreaker",
+    company: "Student Union",
+    responsibilities: [],
+    date_from: "May 2019",
+    date_to: "April 2020",
+  },
+  {
+    title: "GoTeam",
+    company: "Student Union",
+    responsibilities: [],
+    date_from: "Mar 2018",
+    date_to: "Sept 2018",
+  },
+  {
+    title: "WebMaster",
+    company: "Laurier Data Science Society",
+    responsibilities: [],
+    date_from: "May 2020",
+    date_to: "April 2021",
+  },
+  {
+    title: "Director of Operations",
+    company: "The GoldenHack",
+    responsibilities: [],
+    date_from: "May 2019",
+    date_to: "Oct 2019",
+  }
 ];
 
 // Experiences
 const EXPERIENCES = [
+  {
+    company: "PepsiCo",
+    date_from: "Sept. 2021",
+    date_to: "Dec. 2021",
+    title: "RPA Developer",
+    location: "Virtual",
+    tools_and_technologies: ["Azure Devops", "Visual Studio", "Excel"],
+    languages_and_frameworks: ["UiPath", "C#"],
+    isCoop: true,
+  },
   {
     company: "Rodan Energy Solutions",
     date_from: "Sept. 2020",
@@ -81,9 +128,6 @@ const EXPERIENCES = [
       "VBA",
       "Python",
     ],
-    responsibilities: [
-      
-    ],
     isCoop: true,
   },
   {
@@ -91,7 +135,7 @@ const EXPERIENCES = [
     date_from: "Jan. 2020",
     date_to: "Dec. 2020",
     title: "Software Developer",
-    location: "Waterloo, ON, Canada",
+    location: "Kitchener, ON, Canada",
     tools_and_technologies: ["SVN", "Atlassian", "Visual Studio", "SSMS"],
     languages_and_frameworks: [
       "HTML",
@@ -101,8 +145,6 @@ const EXPERIENCES = [
       "C#",
       "SQL",
     ],
-    summary: [
-    ],
     isCoop: true,
   },
   {
@@ -110,7 +152,7 @@ const EXPERIENCES = [
     date_from: "May 2019",
     date_to: "Aug. 2019",
     title: "Software Developer",
-    location: "Waterloo, ON, Canada",
+    location: "Kitchener, ON, Canada",
     tools_and_technologies: ["Git", "Atlassian", "Visual Studio", "MongoDB"],
     languages_and_frameworks: [
       "HTML",
@@ -119,7 +161,6 @@ const EXPERIENCES = [
       "Angular",
       "NodeJS",
     ],
-    summary: [],
     isCoop: true,
   },
   {
@@ -128,8 +169,6 @@ const EXPERIENCES = [
     date_to: "April 2021",
     title: "Peer Tutor/Mentor",
     location: "Waterloo, ON, Canada",
-    main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
-    summary: [],
     isPartTime: true,
   },
   {
@@ -138,8 +177,6 @@ const EXPERIENCES = [
     date_to: "April 2021",
     title: "Instructional Assistant",
     location: "Waterloo, ON, Canada",
-    main_skills: ["Communication", "Punctuality", "Knowledgeable", "Patience"],
-    summary: [],
     isPartTime: true,
   },
   {
@@ -148,30 +185,14 @@ const EXPERIENCES = [
     date_to: "Dec. 2019",
     title: "Proctor and Marker",
     location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Attention to Details",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-    ],
-    summary: [],
     isPartTime: true,
   },
   {
-    company: "Teaching and Learning",
+    company: "Laurier 101",
     date_from: "May 2018",
     date_to: "Sept. 2018",
     title: "Headstart Ambassador",
     location: "Waterloo, ON, Canada",
-    main_skills: [
-      "Communication",
-      "Team Work",
-      "Punctuality",
-      "Knowledgeable",
-      "Patience",
-      "Leadership",
-    ],
-    summary: [],
     isPartTime: true,
   },
 ];
@@ -187,7 +208,7 @@ const PROJECTS = [
     description:
       "This project is a web application that highlight my experiences. It gives people an insight into my roles and experiences, and what I gained from them.",
     image: "1bhhFCL67o7Nuij-qV5Ad5wDa2GVr0gZk",
-    type: [2]
+    type: [2],
   },
   {
     name: "Web Resume REST API",
@@ -198,7 +219,7 @@ const PROJECTS = [
     description:
       "A REST API built on NodeJS and Express, that is used to update (via a mobile app) and get the content to display on my website",
     image: "1zs8eyFarmICVLZMtDRDv-gyyQTFTjTBa",
-    type: [3]
+    type: [3],
   },
   {
     name: "Web Resume Updater",
@@ -209,95 +230,34 @@ const PROJECTS = [
     description:
       "A mobile application built on Flutter SDK used to update the content on my website via the Web Resume REST API",
     image: "1uxtCTvYaUPKJky5vBasGDWHCML9zJWGw",
-    type: [2, 3, 4]
+    type: [2, 3, 4],
   },
   {
     name: "KARA",
-    languages_and_frameworks: ["Python", "React", "JavaScript", "HTML", "CSS", "SQL"],
+    languages_and_frameworks: [
+      "Python",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SQL",
+    ],
     tools_and_technologies: ["Visual Studio", "Git"],
     production_link: "",
     source_code_link: "https://github.com/AbdulBaseetShabi/KARA_CP465",
     description:
       "A web based application that serves as a user friendly alternative to managing databases on MSSQL servers, especially for individuals who are not familiar with SQL.",
     image: "14_lOg_iv0p1s04JPNfjt08JpVWIyvG2W",
-    type: [1, 2, 3, 4]
+    type: [1, 2, 3, 4],
   },
 ];
 
 module.exports = {
   GOOGLE_DRIVE_PREFIX,
+  DESCRIPTIONS,
   EDUCATION,
+  SOCIALS,
   ACTIVITIES,
   EXPERIENCES,
   PROJECTS,
 };
-
-
-// {
-//   company: "Student Union",
-//   date_from: "May 2019",
-//   date_to: "April 2020",
-//   title: "Icebreaker",
-//   location: "Waterloo, ON, Canada",
-//   main_skills: [
-//     "Communication",
-//     "Team Work",
-//     "Punctuality",
-//     "Knowledgeable",
-//     "Patience",
-//     "Leadership",
-//   ],
-//   summary: [],
-//   type: "volunteer",
-// },
-// {
-//   company: "Laurier International",
-//   date_from: "June 2018",
-//   date_to: "April 2019",
-//   title: "Global Engagement Student Ambassador",
-//   location: "Waterloo, ON, Canada",
-//   main_skills: [
-//     "Communication",
-//     "Team Work",
-//     "Punctuality",
-//     "Knowledgeable",
-//     "Patience",
-//     "Leadership",
-//   ],
-//   summary: [],
-//   type: "volunteer",
-// },
-// {
-//   company: "Laurier Computing Society",
-//   date_from: "May 2020",
-//   date_to: "April 2021",
-//   title: "President",
-//   location: "Waterloo, ON, Canada",
-//   main_skills: [
-//     "Communication",
-//     "Team Work",
-//     "Punctuality",
-//     "Knowledgeable",
-//     "Patience",
-//     "Leadership",
-//   ],
-//   summary: [],
-//   type: "volunteer",
-// },
-// {
-//   company: "Laurier Data Science Society",
-//   date_from: "Sept. 2020",
-//   date_to: "April 2021",
-//   title: "Web Master",
-//   location: "Waterloo, ON, Canada",
-//   main_skills: [
-//     "Communication",
-//     "Team Work",
-//     "Punctuality",
-//     "Knowledgeable",
-//     "Patience",
-//     "Leadership",
-//   ],
-//   summary: [],
-//   type: "volunteer",
-// },

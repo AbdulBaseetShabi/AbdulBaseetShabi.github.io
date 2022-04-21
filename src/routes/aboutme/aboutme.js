@@ -1,5 +1,6 @@
 // import GlobalVariables from "../../global/global-variables";
 import AnimatedConsole from "../../widget/animatedconsole/animatedconsole";
+import GlobalVariables from "../../global/global-variables"
 import Socials from "../../widget/socials/socials";
 import "./aboutme.css";
 
@@ -16,19 +17,7 @@ function Body() {
             </label>
           }
           suffixText="*"
-          texts={[
-            "👋🏿 Hi, I am Abdul-Baseet Shabi",
-            "🙂 Abdul for short",
-            "⭐ Welcome to my personal website ⭐",
-            "🏗️ It was built from scratch on React",
-            "👨‍💻 Full-Stack Developer",
-            "🤖 Technological Euthasits",
-            "📚 Favorite stack: MERN (MongoDB + Express + React + NodeJs)",
-            "🤳🏿 Favourite language: Tie between JavaScript and Python",
-            "💹 Unique value proposition: Experience in varying industries",
-            "❤️ Hobbies: Cooking, Basketball, NFL playoffs",
-            "🍕 Pineapple on Pizza: Yes",
-          ]}
+          texts={GlobalVariables.DESCRIPTIONS}
           command={" $ cat abdul_summary.txt"}
           commandTypingSpeed={50}
           backgroundColor={"black"}

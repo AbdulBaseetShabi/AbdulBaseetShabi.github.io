@@ -1,35 +1,7 @@
 import React from "react";
+import GlobalVariables from "../../global/global-variables"
 import GlobalFunction from "../../global/global-functions";
 import "./socials.css";
-
-const SOCIALS = [
-  {
-    name: "Resume",
-    url: "https://docs.google.com/viewer?url=https://github.com/AbdulBaseetShabi/web-resume/raw/master/public/assets/resume/resume.pdf",
-    src: "https://img.icons8.com/plasticine/60/000000/file.png",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/abdulbaseet/",
-    src: "https://img.icons8.com/fluency/60/000000/linkedin.png",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/bsquare480/",
-    src: "https://img.icons8.com/fluency/60/000000/instagram-new.png",
-  },
-  {
-    name: "Email",
-    url: "mailto:shab7430@mylaurier.ca",
-    src: "https://img.icons8.com/fluency/60/000000/email-open.png",
-  },
-  {
-    name: "GitHub",
-    src: "https://img.icons8.com/glyph-neue/64/FFFFFF/github.png",
-    url: "https://github.com/AbdulBaseetShabi",
-  },
-
-];
 
 class Socials extends React.Component {
   constructor(props) {
@@ -50,9 +22,9 @@ class Socials extends React.Component {
   render() {
     return (
       <div id="socials-container">
-        {SOCIALS.map((social, index) => {
+        {GlobalVariables.SOCIALS.map((social, index) => {
           return (
-            <div className="social" key={index} style={{width: `${100/SOCIALS.length}%`}}>
+            <div className="social" key={index} style={{width: `${100/GlobalVariables.SOCIALS.length}%`}}>
               <img
                 className="icon enter-left"
                 alt={social.name}
