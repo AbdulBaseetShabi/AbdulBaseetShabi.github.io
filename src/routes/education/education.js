@@ -1,16 +1,20 @@
 import React from "react";
 import "./education.css";
-// import GlobalFunctions from "../../global/global-functions";
+
+import GlobalFunctions from "../../global/global-functions";
 import GlobalVariables from "../../global/global-variables";
 import EducationCard from "./educationcard";
 import ActivitiesCard from "./activitiescard";
 import Modal from "./positionmodal";
+import LoadingPage from "../../widget/loadingpage/loadingpage";
 
 class Education extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       position: -1,
+      activities: null,
+      loading: true,
     };
     this.drawOnCanvas = this.drawOnCanvas.bind(this);
     this.createDrawings = this.createDrawings.bind(this);
@@ -190,7 +194,12 @@ class Education extends React.Component {
   }
 
   componentDidMount() {
-    this.drawOnCanvas();
+    GlobalFunctions.getDataFromAPI("education", (data) => {
+      setTimeout(() => {
+        this.setState({ activities: data, loading: false });
+        this.drawOnCanvas();
+      }, 2000);
+    });
   }
 
   componentWillUnmount() {
@@ -202,6 +211,14 @@ class Education extends React.Component {
   }
 
   render() {
+    let activities = this.state.activities
+      ? this.state.activities
+      : GlobalVariables.ACTIVITIES;
+
+    if (this.state.loading) {
+      return (<LoadingPage />);
+    }
+
     return (
       <div className="page" id="education">
         <canvas
@@ -234,7 +251,7 @@ class Education extends React.Component {
               />
             </div>
             <div id="activities-container">
-              {GlobalVariables.ACTIVITIES.map((activity, index) => {
+              {activities.map((activity, index) => {
                 return (
                   <ActivitiesCard
                     activity={activity}
@@ -251,9 +268,9 @@ class Education extends React.Component {
             </div>
             {this.state.position !== -1 ? (
               <Modal
-                activity={GlobalVariables.ACTIVITIES[this.state.position]}
+                activity={activities[this.state.position]}
                 current_position={this.state.position}
-                max_position={GlobalVariables.ACTIVITIES.length - 1}
+                max_position={activities.length - 1}
                 navigation={(num) => {
                   this.showReflection(num);
                 }}

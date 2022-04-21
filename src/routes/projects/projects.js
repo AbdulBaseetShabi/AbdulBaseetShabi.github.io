@@ -3,7 +3,9 @@ import "./projects.css";
 
 import GlobalFuntions from "../../global/global-functions.js";
 import GlobalVariables from "../../global/global-variables.js";
+
 import ProjectCard from "./projectcard.js";
+import LoadingPage from "../../widget/loadingpage/loadingpage";
 
 const OPTIONS = ["all", "automation", "front-end", "back-end", "full-stack"];
 const FILTERSTYLE = {
@@ -18,11 +20,18 @@ class Projects extends React.Component {
     this.state = {
       position: -1,
       option: 0,
+      data: null,
+      loading: true,
     };
     this.selected = false;
   }
 
   componentDidMount() {
+    GlobalFuntions.getDataFromAPI("projects", (data) => {
+      setTimeout(() => {
+        this.setState({ data: data, loading: false });
+      }, 2000);
+    });
   }
 
   filterOptions(option) {
@@ -30,9 +39,17 @@ class Projects extends React.Component {
   }
 
   render() {
-    let projects = this.state.option === 0 ? GlobalVariables.PROJECTS : GlobalVariables.PROJECTS.filter((project)=>{
-      return project.type.includes(this.state.option);
-    });
+    let data = this.state.data !== null ? this.state.data : GlobalVariables.PROJECTS;
+    let projects =
+      this.state.option === 0
+        ? data
+        : data.filter((project) => {
+            return project.type.includes(this.state.option);
+          });
+
+    if (this.state.loading) {
+      return <LoadingPage />;
+    }
     return (
       <div id="projects" className="page">
         <div id="project-screen">
@@ -53,9 +70,9 @@ class Projects extends React.Component {
               <span style={{ color: "blue" }}>Where </span>
               <span style={{}}>Project.Type</span> = [
               {OPTIONS.map((x, i) => {
-                let style = {"cursor": 'pointer'}
-                if (this.state.option === i){
-                  style = {...style, ...FILTERSTYLE}
+                let style = { cursor: "pointer" };
+                if (this.state.option === i) {
+                  style = { ...style, ...FILTERSTYLE };
                 }
                 if (i === OPTIONS.length - 1) {
                   return (
@@ -71,10 +88,7 @@ class Projects extends React.Component {
                 }
                 return (
                   <label key={i} index={i}>
-                    <span
-                      onClick={() => this.filterOptions(i)}
-                      style={style}
-                    >
+                    <span onClick={() => this.filterOptions(i)} style={style}>
                       {x}
                     </span>
                     ,{" "}
