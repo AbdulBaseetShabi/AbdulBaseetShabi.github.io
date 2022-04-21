@@ -1,5 +1,8 @@
 #projects{
-  padding-top: 3rem;
+  overflow:hidden;
+  padding-top: 5rem;
+  background-color: cadetblue;
+  box-sizing: border-box;
 }
 
 #project-screen{
@@ -7,6 +10,7 @@
   height: 80%;
   border-radius: 50px;
   margin: auto;
+  margin-top: 0.8rem;
   background-color: #c2e1fb;
   border: 1.5rem solid black;
 }
