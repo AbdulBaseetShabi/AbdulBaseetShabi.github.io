@@ -75,7 +75,7 @@ class Education extends React.Component {
     context.restore();
 
     //draw sun
-    context.drawImage(sun, width - 400, height - 400);
+    context.drawImage(sun, width - (0.25 * width), height - (0.35 * height));
 
     //stars
     let x,
@@ -198,6 +198,9 @@ class Education extends React.Component {
       setTimeout(() => {
         this.setState({ activities: data, loading: false });
         this.drawOnCanvas();
+        window.addEventListener('resize', () => {
+          this.drawOnCanvas();
+        })
       }, 2000);
     });
   }
