@@ -75,21 +75,25 @@ class Experience extends React.Component {
             <label className="inline-block-label experience-title">
               Coop Experience
             </label>
-            {coop.map((exp, index) => {
-              return (
-                <ExperienceCard experience={exp} key={index} type={"coop"} />
-              );
-            })}
+            <div className="experience-column-data">
+              {coop.map((exp, index) => {
+                return (
+                  <ExperienceCard experience={exp} key={index} type={"coop"} />
+                );
+              })}
+            </div>
           </div>
           <div className="experience-column enter-left">
             <label className="inline-block-label experience-title">
               Part Time Experience
             </label>
-            {parttime.map((exp, index) => {
-              return (
-                <ExperienceCard experience={exp} key={index} type={"part"} />
-              );
-            })}
+            <div className="experience-column-data">
+              {parttime.map((exp, index) => {
+                return (
+                  <ExperienceCard experience={exp} key={index} type={"part"} />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
