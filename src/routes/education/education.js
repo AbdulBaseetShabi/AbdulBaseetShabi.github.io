@@ -111,7 +111,7 @@ class Education extends React.Component {
   drawOnCanvas() {
     let canvas = document.getElementById("canvas-education");
 
-    if (canvas.getContext) {
+    if (canvas && canvas.getContext) {
       let page = document.getElementsByClassName("page")[0];
       let height = page.offsetHeight;
       let width = page.offsetWidth;
